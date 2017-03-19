@@ -11,21 +11,20 @@ package Entidades;
  */
 public class Entrenadores {
                                                                             
-    Entrenadores sig,ant; // esto es lista circular 
+    public Entrenadores sig,ant; // esto es lista circular // los hice publicos para poder acceder desde otros paketes
     
     // atributos 
     private String  _nombre;
     private int     _id;
-    private char    _tipo;
     
     //constructor 
     public Entrenadores(){};
     
-    public Entrenadores(String nombre,int id, char tipo)
+    public Entrenadores(String nombre,int id)
     {
         this._nombre=nombre;
         this._id=id;
-        this._tipo=tipo;
+        sig=ant=null;
     }
 
     // setter y getters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
@@ -45,13 +44,6 @@ public class Entrenadores {
         this._id = _id;
     }
    
-    public char getTipo() {
-        return _tipo;
-    }
-
-    public void setTipo(char _tipo) {
-        this._tipo = _tipo;
-    }
     
     
 }
