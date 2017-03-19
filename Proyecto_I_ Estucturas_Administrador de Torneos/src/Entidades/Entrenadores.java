@@ -16,16 +16,18 @@ public class Entrenadores {
     // atributos 
     private String  _nombre;
     private int     _id;
+    private char    _tipo;
     
     //constructor 
     public Entrenadores(){};
     
-    public Entrenadores(String nombre,int id)
+    public Entrenadores(String nombre,int id, char tipo)
     {
         this._nombre=nombre;
         this._id=id;
+        this._tipo=tipo;
     }
-    
+
     // setter y getters                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
     public String getNombre() {
         return _nombre;
@@ -43,6 +45,13 @@ public class Entrenadores {
         this._id = _id;
     }
    
+    public char getTipo() {
+        return _tipo;
+    }
+
+    public void setTipo(char _tipo) {
+        this._tipo = _tipo;
+    }
     
     
 }
