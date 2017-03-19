@@ -3,13 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package proyecto_i_.estucturas_administrador.de.torneos;
+package Mian;
 
 /**
  *
  * @author Usuario
  */
-public class Proyecto_I_Estucturas_AdministradorDeTorneos {
+public class Main {
 
     /**
      * @param args the command line arguments
