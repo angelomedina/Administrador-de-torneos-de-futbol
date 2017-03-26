@@ -16,6 +16,8 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
      */
     public Interfaz_MenuPrincipal() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
@@ -27,34 +29,113 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        menuBar1 = new java.awt.MenuBar();
-        menu1 = new java.awt.Menu();
-        jPopupMenu1 = new javax.swing.JPopupMenu();
-        jMenu1 = new javax.swing.JMenu();
-        popupMenu1 = new java.awt.PopupMenu();
-
-        menu1.setLabel("File");
-        menuBar1.add(menu1);
-
-        jMenu1.setText("jMenu1");
-
-        popupMenu1.setLabel("popupMenu1");
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu2 = new javax.swing.JMenu();
+        jMenuItemAgregarEntrenador = new javax.swing.JMenuItem();
+        jMenuItemAgregarJugador = new javax.swing.JMenuItem();
+        jMenuItemAgregarEstadio = new javax.swing.JMenuItem();
+        jMenuItemAgregarTorneo = new javax.swing.JMenuItem();
+        jMenuItemAgregarEquipo = new javax.swing.JMenuItem();
+        jMenu4 = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenu5 = new javax.swing.JMenu();
+        jMenu6 = new javax.swing.JMenu();
+        jMenu7 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Menu Principal");
+
+        jMenu2.setText("Agregar");
+
+        jMenuItemAgregarEntrenador.setText("Entrenador");
+        jMenuItemAgregarEntrenador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgregarEntrenadorActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemAgregarEntrenador);
+
+        jMenuItemAgregarJugador.setText("Jugador");
+        jMenuItemAgregarJugador.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgregarJugadorActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemAgregarJugador);
+
+        jMenuItemAgregarEstadio.setText("Estadio");
+        jMenuItemAgregarEstadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgregarEstadioActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemAgregarEstadio);
+
+        jMenuItemAgregarTorneo.setText("Toneo");
+        jMenu2.add(jMenuItemAgregarTorneo);
+
+        jMenuItemAgregarEquipo.setText("Equipo");
+        jMenuItemAgregarEquipo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgregarEquipoActionPerformed(evt);
+            }
+        });
+        jMenu2.add(jMenuItemAgregarEquipo);
+
+        jMenuBar1.add(jMenu2);
+
+        jMenu4.setText("Entrenador");
+        jMenuBar1.add(jMenu4);
+
+        jMenu3.setText("Jugador");
+        jMenuBar1.add(jMenu3);
+
+        jMenu5.setText("Estadio");
+        jMenuBar1.add(jMenu5);
+
+        jMenu6.setText("Torneo");
+        jMenuBar1.add(jMenu6);
+
+        jMenu7.setText("Salir");
+        jMenuBar1.add(jMenu7);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 703, Short.MAX_VALUE)
+            .addGap(0, 426, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 431, Short.MAX_VALUE)
+            .addGap(0, 148, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItemAgregarEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEntrenadorActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new Interfaz_Entrenador().setVisible(true);
+    }//GEN-LAST:event_jMenuItemAgregarEntrenadorActionPerformed
+
+    private void jMenuItemAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarJugadorActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new Interfaz_Jugadores().setVisible(true);
+    }//GEN-LAST:event_jMenuItemAgregarJugadorActionPerformed
+
+    private void jMenuItemAgregarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEquipoActionPerformed
+        // TODO add your handling code here:
+        this.dispose();
+        new Interfaz_Equipos().setVisible(true);
+    }//GEN-LAST:event_jMenuItemAgregarEquipoActionPerformed
+
+    private void jMenuItemAgregarEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEstadioActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jMenuItemAgregarEstadioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -92,10 +173,17 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private java.awt.Menu menu1;
-    private java.awt.MenuBar menuBar1;
-    private java.awt.PopupMenu popupMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
+    private javax.swing.JMenu jMenu4;
+    private javax.swing.JMenu jMenu5;
+    private javax.swing.JMenu jMenu6;
+    private javax.swing.JMenu jMenu7;
+    private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItemAgregarEntrenador;
+    private javax.swing.JMenuItem jMenuItemAgregarEquipo;
+    private javax.swing.JMenuItem jMenuItemAgregarEstadio;
+    private javax.swing.JMenuItem jMenuItemAgregarJugador;
+    private javax.swing.JMenuItem jMenuItemAgregarTorneo;
     // End of variables declaration//GEN-END:variables
 }

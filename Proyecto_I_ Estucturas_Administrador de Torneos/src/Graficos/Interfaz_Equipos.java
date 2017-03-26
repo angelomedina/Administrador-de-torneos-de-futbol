@@ -20,6 +20,8 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
      */
     public Interfaz_Equipos() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**

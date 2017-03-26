@@ -21,6 +21,8 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
      
     public Interfaz_Entrenador() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     

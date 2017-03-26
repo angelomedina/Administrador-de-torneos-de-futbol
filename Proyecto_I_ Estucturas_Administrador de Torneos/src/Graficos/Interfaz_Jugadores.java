@@ -21,6 +21,8 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
      */
     public Interfaz_Jugadores() {
         initComponents();
+        this.setLocationRelativeTo(null);
+        this.setResizable(false);
     }
 
     /**
