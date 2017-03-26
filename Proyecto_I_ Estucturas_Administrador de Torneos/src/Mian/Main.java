@@ -17,7 +17,7 @@ public class Main {
     public static void main(String[] args) {
         
         // prueba
-        System.out.println("Primera linea de codigo");
+        System.out.println("Primera algooo");
     }
     
 }
