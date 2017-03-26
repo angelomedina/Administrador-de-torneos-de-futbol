@@ -7,14 +7,14 @@ package Graficos;
 
 /**
  *
- * @author Admi
+ * @author Usuario
  */
-public class MenuEntredar extends javax.swing.JFrame {
+public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
 
     /**
-     * Creates new form MenuEntredar
+     * Creates new form Interfaz_MenuPrincipal
      */
-    public MenuEntredar() {
+    public Interfaz_MenuPrincipal() {
         initComponents();
     }
 
@@ -27,29 +27,30 @@ public class MenuEntredar extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1 = new javax.swing.JButton();
-        Equipo = new javax.swing.JTabbedPane();
-        jTabbedPane2 = new javax.swing.JTabbedPane();
-        jTabbedPane3 = new javax.swing.JTabbedPane();
-        jTabbedPane4 = new javax.swing.JTabbedPane();
+        menuBar1 = new java.awt.MenuBar();
+        menu1 = new java.awt.Menu();
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenu1 = new javax.swing.JMenu();
+        popupMenu1 = new java.awt.PopupMenu();
 
-        jButton1.setText("jButton1");
+        menu1.setLabel("File");
+        menuBar1.add(menu1);
+
+        jMenu1.setText("jMenu1");
+
+        popupMenu1.setLabel("popupMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-
-        Equipo.addTab("Entredanor", jTabbedPane2);
-        Equipo.addTab("Equipo", jTabbedPane3);
-        Equipo.addTab("Jugadores", jTabbedPane4);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Equipo, javax.swing.GroupLayout.DEFAULT_SIZE, 318, Short.MAX_VALUE)
+            .addGap(0, 703, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(Equipo, javax.swing.GroupLayout.DEFAULT_SIZE, 423, Short.MAX_VALUE)
+            .addGap(0, 431, Short.MAX_VALUE)
         );
 
         pack();
@@ -72,30 +73,29 @@ public class MenuEntredar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuEntredar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuEntredar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuEntredar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(MenuEntredar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_MenuPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
-        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MenuEntredar().setVisible(true);
+                new Interfaz_MenuPrincipal().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTabbedPane Equipo;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JTabbedPane jTabbedPane2;
-    private javax.swing.JTabbedPane jTabbedPane3;
-    private javax.swing.JTabbedPane jTabbedPane4;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private java.awt.Menu menu1;
+    private java.awt.MenuBar menuBar1;
+    private java.awt.PopupMenu popupMenu1;
     // End of variables declaration//GEN-END:variables
 }
