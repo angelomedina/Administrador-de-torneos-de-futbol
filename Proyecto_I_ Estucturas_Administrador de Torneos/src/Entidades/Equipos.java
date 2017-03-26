@@ -10,6 +10,17 @@ package Entidades;
  * @author Usuario
  */
 public class Equipos {
+    // esto es una lista circular doble
+    private String nombre;
+    private int    codigo; 
     
+    Equipos sig,ant;  
+    
+    public Equipos(String nombre,int codigo)
+    {
+        this.nombre=nombre;
+        this.codigo=codigo;
+        sig=ant=null;
+    }
     
 }

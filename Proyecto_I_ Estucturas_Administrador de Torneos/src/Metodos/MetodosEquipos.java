@@ -9,6 +9,6 @@ package Metodos;
  *
  * @author Usuario
  */
-public class MetodosEquipo {
+public class MetodosEquipos {
     
 }

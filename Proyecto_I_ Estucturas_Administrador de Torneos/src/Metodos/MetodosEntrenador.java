@@ -4,7 +4,7 @@
  * and open the template in the editor.
  */
 package Metodos;
-import Entidades.Entrenadores;
+import Entidades.*;
 /**
  *
  * @author Usuario
@@ -19,71 +19,66 @@ public class MetodosEntrenador  extends Entrenadores {
     {
         Entrenadores nuevo=new Entrenadores(nombre,id); // se crea el objeto entrenador
         
-        if(inicio==null)
+        if (inicio==null)
         {
-                      
-          inicio=fin=nuevo;  
-          inicio.sig=inicio;
-          inicio.ant=inicio;
-          return "Insertado al Inicio";          
+            inicio=fin=nuevo;
+            fin.sig=inicio;
+            return "Agregado";
         }
-        
-        inicio.ant=nuevo;
         nuevo.sig=inicio;
-        nuevo.ant=fin;
-        fin.sig=nuevo;
         inicio=nuevo;
-        return "Insertado al inicio";
+        fin.sig=inicio;
+
+        return "Agregado";
     }
    
     public String InsertarFinal(String nombre,int id)
     {
          Entrenadores nuevo=new Entrenadores(nombre,id); // se crea el objeto entrenador
-        
-        if(inicio==null)
+         
+        if (inicio==null)
         {
-          fin=inicio=nuevo;
-          inicio.sig=inicio;
-          inicio.ant=inicio;
-          return "Insertado al Final";          
+            fin=nuevo;
+            inicio=fin;
+            fin.sig=inicio;
+            return "Agregado";
         }
-        
         fin.sig=nuevo;
-        nuevo.ant=fin;
         nuevo.sig=inicio;
-        inicio.ant=nuevo;
         fin=nuevo;
-        return "Insertado al Final";
+        return "Agregado";
     }
     
-    public boolean buscar(String nombre ,int id)
+    public boolean buscarEntrenador(String nombre ,int id)
     {
-        Entrenadores temp  = inicio;
-        Entrenadores aux  =  inicio;
-        
-        if(inicio != null)
+        Entrenadores temp = inicio;
+        Entrenadores  aux = inicio;
+        if (inicio==null)
+         {
+             return false;
+         }
+        if (inicio.getNombre().equals(nombre) && inicio.getId()==id)
         {
-            if (temp==temp.sig)
-            {
-                if (temp.getNombre().equals(nombre) && temp.getId()==id)   
-               {
-                   return true;
-               }
-               temp=temp.sig;
-            }  
-             
-            while (temp != aux.sig )
-            {
-             if (temp.getNombre().equals(nombre) && temp.getId()==id)   
-             {
-                 return true;
-             }
-             temp=temp.sig;
-            }
+          return true;
         }
-        return false;
+        else
+        {
+            while(aux.sig != temp)
+            {
+                if (aux.getNombre().equals(nombre) && aux.getId()==id)
+                {
+                    return true;
+                }    
+                aux=aux.sig;
+            }
+            if (aux.getNombre().equals(nombre) && aux.getId()==id)
+            {
+                    return true;
+            }
+            return false;   
+        }  
     }
-    
+   
     public boolean verificaID(int id) 
     {
         Entrenadores temp  = inicio;
