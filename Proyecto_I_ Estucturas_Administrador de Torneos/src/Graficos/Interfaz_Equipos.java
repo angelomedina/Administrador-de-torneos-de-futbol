@@ -7,17 +7,22 @@ package Graficos;
 import java.io.File;
 import javax.swing.*;
 import Entidades.*;
+import Metodos.*;
 /**
  *
  * @author Oscar
  */
 public class Interfaz_Equipos extends javax.swing.JFrame {
+    
     JFileChooser seleccionado = new JFileChooser();
     File archivo;
     byte[] bytesImg;
     
     Gestion_de_Imagenes gestionCasa = new Gestion_de_Imagenes();
     Gestion_de_Imagenes gestionVisita = new Gestion_de_Imagenes();
+    
+    MetodosEquipos met =new MetodosEquipos();
+    DefaultListModel <String> ListModel = new DefaultListModel <>();// esto es para poder usar la jlist1
     /**
      * Creates new form JFGestionA
      */
@@ -49,6 +54,11 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
         lblImagen1 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
+        jButton1_Insertar_Inicio = new javax.swing.JButton();
+        jButton2_Insertar_Final = new javax.swing.JButton();
+        jLabel8 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Administrador crea Equipo");
@@ -91,11 +101,31 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
 
         lblImagen1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
+        jButton1_Insertar_Inicio.setText("Agragrgar al Inicio");
+        jButton1_Insertar_Inicio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_Insertar_InicioActionPerformed(evt);
+            }
+        });
+
+        jButton2_Insertar_Final.setText("Agrgar al Final");
+        jButton2_Insertar_Final.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_Insertar_FinalActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel8.setText("Mostrar ");
+
+        jScrollPane1.setViewportView(jList1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -112,15 +142,23 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(jButton1_Uniforme_Casa_)
                             .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
-                            .addComponent(jTextField2))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel6)
-                    .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(45, 45, 45)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7)
-                    .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jTextField2)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jButton1_Insertar_Inicio)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton2_Insertar_Final)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 87, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(45, 45, 45)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
+                            .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jLabel8)
+                    .addComponent(jScrollPane1))
                 .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
@@ -151,7 +189,18 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
                             .addComponent(jButton1_Uniforme_Visita)))
                     .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(213, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(45, 45, 45)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1_Insertar_Inicio)
+                            .addComponent(jButton2_Insertar_Final)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(28, 28, 28)
+                        .addComponent(jLabel8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -183,6 +232,7 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
             {
                 bytesImg = gestionVisita.AbrirAImagen(archivo);
                 lblImagen2.setIcon(new ImageIcon(bytesImg));
+              
             }
             else
             {
@@ -191,6 +241,105 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton1_Uniforme_VisitaActionPerformed
 
+    private void jButton1_Insertar_InicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Insertar_InicioActionPerformed
+        try 
+        {
+            
+            String nombre=jTextField1.getText();
+            int    codigo=Integer.parseInt(jTextField2.getText());
+            
+            ImageIcon ImagenCasa=(ImageIcon) lblImagen1.getIcon();
+            ImageIcon ImagenVisita=(ImageIcon) lblImagen2.getIcon();
+            
+            if (ImagenCasa != null || ImagenVisita != null)
+            {
+                boolean verifica=met.verificaCodigo(codigo);
+                if(verifica==false)
+                {
+                    String insertar=met.InsertarInicio(nombre, codigo, ImagenCasa, ImagenVisita);
+
+                    JOptionPane.showMessageDialog(null, insertar);
+                    Imprimir();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"El codigo seleccionado se encuentra ocupado");
+                }
+            }
+            else
+            {
+            JOptionPane.showMessageDialog(null,"Debe Seleccionar los Uniformes");
+            }
+            
+        }
+        catch (Exception e) 
+        {
+           JOptionPane.showMessageDialog(null,"Error al Ingresar los Datos");
+        }
+    }//GEN-LAST:event_jButton1_Insertar_InicioActionPerformed
+
+    private void jButton2_Insertar_FinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Insertar_FinalActionPerformed
+      try 
+        {
+            
+            String nombre=jTextField1.getText();
+            int    codigo=Integer.parseInt(jTextField2.getText());
+            
+            ImageIcon ImagenCasa=(ImageIcon) lblImagen1.getIcon();
+            ImageIcon ImagenVisita=(ImageIcon) lblImagen2.getIcon();
+            
+            if (ImagenCasa != null || ImagenVisita != null)
+            {
+                boolean verifica=met.verificaCodigo(codigo);
+                if(verifica==false)
+                {
+                    String insertar=met.InsertarFinal(nombre, codigo, ImagenCasa, ImagenVisita);
+
+                    JOptionPane.showMessageDialog(null, insertar);
+                    Imprimir();
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"El codigo seleccionado se encuentra ocupado");
+                }
+            }
+            else
+            {
+            JOptionPane.showMessageDialog(null,"Debe Seleccionar los Uniformes");
+            }
+            
+        }
+        catch (Exception e) 
+        {
+           JOptionPane.showMessageDialog(null,"Error al Ingresar los Datos");
+        }
+        
+        
+    }//GEN-LAST:event_jButton2_Insertar_FinalActionPerformed
+
+    
+    public void Imprimir()
+    {
+        ListModel.clear();
+        if (met.inicio==met.inicio.sig)
+        {
+          ListModel.addElement("Nombre:  "+ met.inicio.nombre +"  Codigo:   "+ met.inicio.codigo);// muestra en ListModel el nombre y la edad del Cliente
+        }
+        else
+        {
+            Equipos temp = met.inicio;
+            Equipos aux = met.inicio;
+            while(aux.sig != temp)
+            {
+                ListModel.addElement("Nombre: "+aux.nombre +"  Codigo:  "+ aux.codigo);// muestra en ListModel el nombre y la edad del Cliente
+                System.out.println(aux.nombre);
+                aux=aux.sig;
+            }
+            ListModel.addElement("Nombre: "+aux.nombre +"  Codigo:  "+ aux.codigo);
+        }
+        jList1.setModel(ListModel);    
+    }
+    
     /**
      * @param args the command line arguments
      */
@@ -228,8 +377,10 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_Insertar_Inicio;
     private javax.swing.JButton jButton1_Uniforme_Casa_;
     private javax.swing.JButton jButton1_Uniforme_Visita;
+    private javax.swing.JButton jButton2_Insertar_Final;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -237,6 +388,9 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JList<String> jList1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JLabel lblImagen1;
