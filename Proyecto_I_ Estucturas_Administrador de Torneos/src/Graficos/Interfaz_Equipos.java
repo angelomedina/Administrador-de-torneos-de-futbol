@@ -4,19 +4,22 @@
  * and open the template in the editor.
  */
 package Graficos;
-
 import java.io.File;
-import javax.swing.JFileChooser;
-import javax.swing.JOptionPane;
-
+import javax.swing.*;
+import Entidades.*;
 /**
  *
- * @author Usuario
+ * @author Oscar
  */
 public class Interfaz_Equipos extends javax.swing.JFrame {
-
+    JFileChooser seleccionado = new JFileChooser();
+    File archivo;
+    byte[] bytesImg;
+    
+    Gestion_de_Imagenes gestionCasa = new Gestion_de_Imagenes();
+    Gestion_de_Imagenes gestionVisita = new Gestion_de_Imagenes();
     /**
-     * Creates new form Interfaz_Equipos
+     * Creates new form JFGestionA
      */
     public Interfaz_Equipos() {
         initComponents();
@@ -33,136 +36,160 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jDialog1 = new javax.swing.JDialog();
-        jFileChooser1_Selecionar_Imagen_Equipo_Casa_ = new javax.swing.JFileChooser();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jTextField2 = new javax.swing.JTextField();
-        jButton1_Buscar_Imagen_Casa_ = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
-        jButton2_Bascar_Imagen_Visita_ = new javax.swing.JButton();
-
-        jDialog1.setTitle("Seleccionar Imagen de Equipo en Casa");
-        jDialog1.setMinimumSize(new java.awt.Dimension(712, 447));
-
-        jFileChooser1_Selecionar_Imagen_Equipo_Casa_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jFileChooser1_Selecionar_Imagen_Equipo_Casa_ActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jDialog1Layout = new javax.swing.GroupLayout(jDialog1.getContentPane());
-        jDialog1.getContentPane().setLayout(jDialog1Layout);
-        jDialog1Layout.setHorizontalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jFileChooser1_Selecionar_Imagen_Equipo_Casa_, javax.swing.GroupLayout.DEFAULT_SIZE, 671, Short.MAX_VALUE)
-        );
-        jDialog1Layout.setVerticalGroup(
-            jDialog1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jFileChooser1_Selecionar_Imagen_Equipo_Casa_, javax.swing.GroupLayout.DEFAULT_SIZE, 466, Short.MAX_VALUE)
-        );
+        jButton1_Uniforme_Casa_ = new javax.swing.JButton();
+        jLabel6 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jButton1_Uniforme_Visita = new javax.swing.JButton();
+        lblImagen2 = new javax.swing.JLabel();
+        lblImagen1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jTextField2 = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setTitle("Administrador crear Equipo");
+        setTitle("Administrador crea Equipo");
 
-        jLabel1.setText("Crear Equipo");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel1.setText("Agregar Equipo");
 
         jLabel2.setText("Nombre");
 
         jLabel3.setText("Codigo");
 
-        jTextField1.setText("jTextField1");
+        jLabel4.setText("Uniforme Casa");
 
-        jTextField2.setText("jTextField2");
+        jLabel5.setText("Uniforme Visita");
 
-        jButton1_Buscar_Imagen_Casa_.setText("Buscar");
-        jButton1_Buscar_Imagen_Casa_.addActionListener(new java.awt.event.ActionListener() {
+        jButton1_Uniforme_Casa_.setText("Seleccionar");
+        jButton1_Uniforme_Casa_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1_Buscar_Imagen_Casa_ActionPerformed(evt);
+                jButton1_Uniforme_Casa_ActionPerformed(evt);
             }
         });
 
-        jLabel4.setText("Seleccionar Imagen Casa");
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel6.setText("Uniforme Casa");
 
-        jLabel5.setText("Seleccionar Imagen Visita");
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(0, 153, 153));
+        jLabel7.setText("Uniforme Visita");
 
-        jButton2_Bascar_Imagen_Visita_.setText("Buscar");
+        jButton1_Uniforme_Visita.setText("Seleccionar");
+        jButton1_Uniforme_Visita.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_Uniforme_VisitaActionPerformed(evt);
+            }
+        });
+
+        lblImagen2.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
+
+        lblImagen1.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.RAISED));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jButton1_Uniforme_Visita))
                     .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel5)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
-                                    .addComponent(jLabel2)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addComponent(jLabel3)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING)))
-                        .addGap(28, 28, 28)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2_Bascar_Imagen_Visita_)
-                            .addComponent(jButton1_Buscar_Imagen_Casa_))))
-                .addGap(372, 372, 372))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel3))
+                        .addGap(18, 18, 18)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton1_Uniforme_Casa_)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.DEFAULT_SIZE, 138, Short.MAX_VALUE)
+                            .addComponent(jTextField2))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel6)
+                    .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(45, 45, 45)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel7)
+                    .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 81, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(70, 70, 70))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addGap(18, 18, 18)
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(jButton1_Buscar_Imagen_Casa_))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel5)
-                    .addComponent(jButton2_Bascar_Imagen_Visita_))
-                .addContainerGap(211, Short.MAX_VALUE))
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel6)
+                    .addComponent(jLabel7))
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel2)
+                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel3)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(16, 16, 16)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel4)
+                            .addComponent(jButton1_Uniforme_Casa_))
+                        .addGap(7, 7, 7)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jButton1_Uniforme_Visita)))
+                    .addComponent(lblImagen2, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblImagen1, javax.swing.GroupLayout.PREFERRED_SIZE, 129, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(213, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1_Buscar_Imagen_Casa_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Buscar_Imagen_Casa_ActionPerformed
-      //jFrame1_EquipoCasa.setVisible(true);
-      jDialog1.setVisible(true);
-    }//GEN-LAST:event_jButton1_Buscar_Imagen_Casa_ActionPerformed
+    private void jButton1_Uniforme_Casa_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Uniforme_Casa_ActionPerformed
+        if(seleccionado.showDialog(null, "ABRIR ARCHIVO") == JFileChooser.APPROVE_OPTION){
+            archivo = seleccionado.getSelectedFile();
+            
+            if(archivo.getName().endsWith("jpg")||archivo.getName().endsWith("png")||archivo.getName().endsWith("gif"))
+            {
+                bytesImg = gestionCasa.AbrirAImagen(archivo);
+                lblImagen1.setIcon(new ImageIcon(bytesImg));
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Por favor seleccione un archivo de texto o de imagen.");
+            }
+                
+            
+        }
+    }//GEN-LAST:event_jButton1_Uniforme_Casa_ActionPerformed
 
-    private void jFileChooser1_Selecionar_Imagen_Equipo_Casa_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jFileChooser1_Selecionar_Imagen_Equipo_Casa_ActionPerformed
-        JFileChooser selectorArchivo =(JFileChooser)evt.getSource();
-       String command =evt.getActionCommand();
-       if(command.equals(JFileChooser.APPROVE_SELECTION)) // presiona boton aceptar
-       {
-           File archivoSeleccionado = selectorArchivo.getSelectedFile();
-           JOptionPane.showMessageDialog(this,"Ruta"+archivoSeleccionado.getAbsolutePath()+"\n Archivo: "+archivoSeleccionado.getName());
-       }
-       else if(command.equals(JFileChooser.CANCEL_SELECTION))// preciona boton cancelar
-       {
-           JOptionPane.showMessageDialog(this,"Seleccion Cancelada");
-       }
-    }//GEN-LAST:event_jFileChooser1_Selecionar_Imagen_Equipo_Casa_ActionPerformed
+    private void jButton1_Uniforme_VisitaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Uniforme_VisitaActionPerformed
+        if(seleccionado.showDialog(null, "ABRIR ARCHIVO") == JFileChooser.APPROVE_OPTION){
+            archivo = seleccionado.getSelectedFile();
+            
+            if(archivo.getName().endsWith("jpg")||archivo.getName().endsWith("png")||archivo.getName().endsWith("gif"))
+            {
+                bytesImg = gestionVisita.AbrirAImagen(archivo);
+                lblImagen2.setIcon(new ImageIcon(bytesImg));
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null, "Por favor seleccione un archivo de texto o de imagen.");
+            }
+        }
+    }//GEN-LAST:event_jButton1_Uniforme_VisitaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,6 +217,7 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(Interfaz_Equipos.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -200,16 +228,18 @@ public class Interfaz_Equipos extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1_Buscar_Imagen_Casa_;
-    private javax.swing.JButton jButton2_Bascar_Imagen_Visita_;
-    private javax.swing.JDialog jDialog1;
-    private javax.swing.JFileChooser jFileChooser1_Selecionar_Imagen_Equipo_Casa_;
+    private javax.swing.JButton jButton1_Uniforme_Casa_;
+    private javax.swing.JButton jButton1_Uniforme_Visita;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
+    private javax.swing.JLabel lblImagen1;
+    private javax.swing.JLabel lblImagen2;
     // End of variables declaration//GEN-END:variables
 }
