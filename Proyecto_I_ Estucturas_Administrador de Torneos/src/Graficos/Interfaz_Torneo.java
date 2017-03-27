@@ -49,6 +49,8 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(583, 360));
 
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Crear Torneo");
 
         jLabel2.setText("Nombre");
@@ -74,6 +76,8 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(jList1);
 
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(0, 153, 153));
         jLabel3.setText("Mostrar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -119,7 +123,7 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(124, Short.MAX_VALUE))
+                .addContainerGap(123, Short.MAX_VALUE))
         );
 
         pack();
@@ -156,6 +160,8 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
        }
     }//GEN-LAST:event_jButton2_Insertar_Final_Torneo_ActionPerformed
 
+    //String insertar=met.insertarFinal("Mundal 2010");
+    
     public void Imprimir(){
         
         Torneos temp = met.inicio;

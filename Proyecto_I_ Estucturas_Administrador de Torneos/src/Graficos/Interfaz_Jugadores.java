@@ -25,9 +25,7 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
-        
-       
-        
+             
     }
 
     /**
@@ -62,6 +60,7 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jButton1_Insertar_al_Inicio_Jugador = new javax.swing.JButton();
         jButton2_Insertar_Final_ = new javax.swing.JButton();
+        jButton1_Imprime = new javax.swing.JButton();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -130,6 +129,13 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
             }
         });
 
+        jButton1_Imprime.setText("Imprimir");
+        jButton1_Imprime.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_ImprimeActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -138,45 +144,48 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
                 .addGap(27, 27, 27)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jButton1_Insertar_al_Inicio_Jugador)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2_Insertar_Final_)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel6)
-                                .addComponent(jLabel5))
-                            .addComponent(jLabel4)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jLabel3)
-                                            .addGap(36, 36, 36))
-                                        .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                            .addComponent(jLabel8)
-                                            .addGap(31, 31, 31)))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                            .addComponent(jTextField1)
-                                            .addComponent(jTextField2))
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                            .addComponent(jSpinner3, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jSpinner4, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.LEADING))))))
-                        .addGap(28, 28, 28)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(21, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)
-                        .addGap(261, 261, 261))))
+                        .addGap(261, 261, 261))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jButton1_Insertar_al_Inicio_Jugador)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton2_Insertar_Final_)
+                                .addGap(316, 316, 316)
+                                .addComponent(jButton1_Imprime))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel6)
+                                        .addComponent(jLabel5))
+                                    .addComponent(jLabel4)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createSequentialGroup()
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createSequentialGroup()
+                                                    .addComponent(jLabel3)
+                                                    .addGap(36, 36, 36))
+                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                    .addComponent(jLabel8)
+                                                    .addGap(31, 31, 31)))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                    .addComponent(jTextField1)
+                                                    .addComponent(jTextField2))
+                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                    .addComponent(jSpinner3, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jSpinner4, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.LEADING)
+                                                    .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.LEADING))))))
+                                .addGap(28, 28, 28)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(22, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -216,16 +225,39 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
                             .addComponent(jLabel7)
                             .addComponent(jSpinner3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1))
-                .addGap(39, 39, 39)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1_Insertar_al_Inicio_Jugador)
-                    .addComponent(jButton2_Insertar_Final_))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton1_Insertar_al_Inicio_Jugador)
+                            .addComponent(jButton2_Insertar_Final_))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1_Imprime)
+                        .addGap(19, 19, 19))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    // aqui esto quemando datos;
+    // Jugadores de Costa Rica
+    String nuevo1=metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
+    String nuevo2=metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
+    String nuevo3=metJ.InsertarInicio("Acosta"   , 2,8,3,8,1,"Defensa");
+    String nuevo4=metJ.InsertarInicio("Ganzalesz", 3,7,3,4,1,"Defensa");
+    String nuevo5=metJ.InsertarInicio("Umaña"    , 4,5,3,8,7,"Defensa");
+    String nuevo6=metJ.InsertarInicio("Cubero"   , 5,8,6,8,1,"Medio Campo");
+    String nuevo7=metJ.InsertarInicio("Borges"   , 6,8,10,8,9,"Medio Campo");
+    String nuevo8=metJ.InsertarInicio("Tejeda"   , 7,2,1,8,9,"Medio Campo");
+    String nuevo9=metJ.InsertarInicio("Bolaños"   , 8,4,1,2,9,"Medio Campo");
+    String nuevo10=metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
+    String nuevo11=metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
+
+    
+    
+    
     private void jButton1_Insertar_al_Inicio_JugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Insertar_al_Inicio_JugadorActionPerformed
         try{
             String nombre=jTextField2.getText();
@@ -254,7 +286,7 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1_Insertar_al_Inicio_JugadorActionPerformed
 
     private void jButton2_Insertar_Final_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_Insertar_Final_ActionPerformed
-        try{
+      try{
             String nombre=jTextField2.getText();
             long    cedula=Integer.parseInt(jTextField1.getText());
 
@@ -279,6 +311,10 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "Error al Ingresar los Datos");
         }
     }//GEN-LAST:event_jButton2_Insertar_Final_ActionPerformed
+
+    private void jButton1_ImprimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_ImprimeActionPerformed
+        Imprimir();
+    }//GEN-LAST:event_jButton1_ImprimeActionPerformed
 
     
     public void Imprimir(){
@@ -335,6 +371,7 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_Imprime;
     private javax.swing.JButton jButton1_Insertar_al_Inicio_Jugador;
     private javax.swing.JButton jButton2_Insertar_Final_;
     private javax.swing.JCheckBox jCheckBox1;

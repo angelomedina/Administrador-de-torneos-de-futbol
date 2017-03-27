@@ -16,6 +16,7 @@ public class MetodosJugadores {
    static int _disparo   = 100000;
     
     public Jugadores  inicio;
+
     
     public int calcularValor(int fisico,int defensa ,int dribbling ,int disparo)
     {
