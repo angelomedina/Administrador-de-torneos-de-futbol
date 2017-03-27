@@ -11,8 +11,8 @@ package Metodos;
  */
 public class MetodosLogin {
     
-    private String _nombreUsuarioAdmi;
-    private String _contraseñaAdmi;
+    private String _nombreUsuarioAdmi="Fifa";
+    private String _contraseñaAdmi="123";
 
     public MetodosLogin() {
     }
@@ -23,13 +23,15 @@ public class MetodosLogin {
     }
     
     public String iniciarSecion(String nombreUsuario, String password){
-        if(nombreUsuario.equals(this._nombreUsuarioAdmi) && password.equals(this._contraseñaAdmi)){
-            return "Correcto";
-        }else if(1==1){
-            return "";
-        }else{
-            return "El usuario no existe";
+        if(nombreUsuario.equals(this._nombreUsuarioAdmi) && password.equals(this._contraseñaAdmi))
+        {
+            return "Correcto";   
         }
+        else
+        {
+            return "Incorrecto";
+        }
+           
     }
     
 }

@@ -45,6 +45,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Log In");
+        setPreferredSize(new java.awt.Dimension(583, 360));
 
         jLabel1.setText("Nombre de usuario:");
 
@@ -79,7 +80,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(145, 145, 145)
                         .addComponent(jLabel3)))
-                .addContainerGap(78, Short.MAX_VALUE))
+                .addContainerGap(195, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -96,7 +97,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
                     .addComponent(contraseñaTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(IngresarBtn)
-                .addContainerGap(80, Short.MAX_VALUE))
+                .addContainerGap(175, Short.MAX_VALUE))
         );
 
         pack();
@@ -108,8 +109,13 @@ public class Interfaz_Login extends javax.swing.JFrame {
         this.contraseña = contraseñaTxt.getText();
         
         String msg = metodos.iniciarSecion(nombreUsuario, contraseña);
-        
         JOptionPane.showMessageDialog(null, msg);
+        
+        if (msg.equals("Correcto"))
+        {
+            this.dispose();
+            new Interfaz_MenuPrincipal().setVisible(true);
+        }
         
     }//GEN-LAST:event_IngresarBtnMouseClicked
 

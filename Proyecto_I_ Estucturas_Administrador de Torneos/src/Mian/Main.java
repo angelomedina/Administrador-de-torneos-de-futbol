@@ -5,19 +5,23 @@
  */
 package Mian;
 
+import Entidades.*;
+import Graficos.*;
+import Metodos.*;
+
+
 /**
  *
  * @author Usuario
  */
 public class Main {
-
+        
     /**
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        
-        // prueba
-        System.out.println("Primera algooo");
+          
+        new Interfaz_Login(new MetodosLogin()).setVisible(true);
     }
     
 }

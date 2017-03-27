@@ -71,7 +71,12 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         });
         jMenu2.add(jMenuItemAgregarEstadio);
 
-        jMenuItemAgregarTorneo.setText("Toneo");
+        jMenuItemAgregarTorneo.setText("Torneo");
+        jMenuItemAgregarTorneo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemAgregarTorneoActionPerformed(evt);
+            }
+        });
         jMenu2.add(jMenuItemAgregarTorneo);
 
         jMenuItemAgregarEquipo.setText("Equipo");
@@ -105,11 +110,11 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 833, Short.MAX_VALUE)
+            .addGap(0, 583, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 401, Short.MAX_VALUE)
+            .addGap(0, 339, Short.MAX_VALUE)
         );
 
         pack();
@@ -136,6 +141,11 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
     private void jMenuItemAgregarEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEstadioActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_jMenuItemAgregarEstadioActionPerformed
+
+    private void jMenuItemAgregarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarTorneoActionPerformed
+        this.dispose();
+        new Interfaz_Torneo().setVisible(true);
+    }//GEN-LAST:event_jMenuItemAgregarTorneoActionPerformed
 
     /**
      * @param args the command line arguments

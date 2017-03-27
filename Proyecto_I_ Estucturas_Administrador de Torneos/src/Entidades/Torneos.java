@@ -10,5 +10,15 @@ package Entidades;
  * @author Admi
  */
 public class Torneos {
+    // torneo es una lista doble 
+    
+    public String nombre; 
+    public Torneos sig,ant;  
+    
+    public Torneos(String nombre)
+    {
+        this.nombre=nombre;
+        sig=ant=null;
+    }
     
 }

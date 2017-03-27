@@ -13,9 +13,11 @@ import javax.swing.JOptionPane;
  * @author Usuario
  */
 public class Interfaz_Jugadores extends javax.swing.JFrame {
-
+    
     MetodosJugadores metJ =new MetodosJugadores();
     DefaultListModel <String> ListModel = new DefaultListModel <>();// esto es para poder usar la jlist1
+    
+    
     /**
      * Creates new form Interfaz_Equipo
      */
@@ -23,6 +25,9 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
+        
+       
+        
     }
 
     /**
@@ -154,10 +159,11 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
                                         .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                                             .addComponent(jLabel8)
                                             .addGap(31, 31, 31)))
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jTextField1)
-                                        .addComponent(jTextField2)
+                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                            .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                            .addComponent(jTextField1)
+                                            .addComponent(jTextField2))
                                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                             .addComponent(jSpinner3, javax.swing.GroupLayout.Alignment.LEADING)
                                             .addComponent(jSpinner4, javax.swing.GroupLayout.Alignment.LEADING)
@@ -214,7 +220,7 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1_Insertar_al_Inicio_Jugador)
                     .addComponent(jButton2_Insertar_Final_))
-                .addContainerGap(121, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -288,6 +294,8 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
     }
     
     
+    
+    
     /**
      * @param args the command line arguments
      */
@@ -320,6 +328,8 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new Interfaz_Jugadores().setVisible(true);
+                
+      
             }
         });
     }
