@@ -18,7 +18,8 @@ public class Equipos {
     public ImageIcon imagenCasa;
     public ImageIcon imagenVisita;
     
-    public Equipos sig,ant;  
+    public Equipos sig,ant; 
+    public Enlace_Torneo_Euipos sigSub; // es para vincular este equipo al torneo
     
     public Equipos(String nombre,int codigo,ImageIcon ImagenCasa,ImageIcon ImagenVisita)
     {

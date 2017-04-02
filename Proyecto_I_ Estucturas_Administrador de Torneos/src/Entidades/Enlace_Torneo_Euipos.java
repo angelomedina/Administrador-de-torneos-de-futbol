@@ -11,13 +11,13 @@ package Entidades;
  */
 public class Enlace_Torneo_Euipos {
     
-    Enlace_Torneo_Euipos sig;
-    Equipos    sigEquipo;
+    public Enlace_Torneo_Euipos sig;
+    public Torneos    sigTorneo;
 
     public Enlace_Torneo_Euipos()
     {
         this.sig =null;
-        this.sigEquipo =null;
+        this.sigTorneo =null;
     }
     
     
