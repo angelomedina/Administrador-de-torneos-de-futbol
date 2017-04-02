@@ -14,11 +14,15 @@ public class Torneos {
     
     public String nombre; 
     public Torneos sig,ant;  
+    Enlace_Torneo_Euipos sigSub;// este se comunica con se comunica con el Enlace Toneo Equipos
+    
     
     public Torneos(String nombre)
     {
         this.nombre=nombre;
-        sig=ant=null;
+        this.sig=ant=null;
+        this.sigSub=null;
+        
     }
     
 }
