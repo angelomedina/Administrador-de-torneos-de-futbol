@@ -17,6 +17,25 @@ public class Interfaz_Login extends javax.swing.JFrame {
     String nombreUsuario;
     String contraseña;
     private char tipoUsuario;
+    
+    //interfaces
+    public static Interfaz_MenuPrincipal principal  = new Interfaz_MenuPrincipal();
+    public static Interfaz_Entrenador    entrenador = new Interfaz_Entrenador();
+    public static Interfaz_Jugadores     jugadores  = new Interfaz_Jugadores();
+    public static Interfaz_Torneo        torneo     = new Interfaz_Torneo();
+    public static Interfaz_Equipos       equipos    = new Interfaz_Equipos();
+    public static Interfaz_Enlaces       enlaces   =  new Interfaz_Enlaces();
+    //metodos
+    public static Metodos_Enlace_Torneo_Equipo metET =  new Metodos_Enlace_Torneo_Equipo();
+    public static MetodosEquipos               metE  =  new MetodosEquipos();
+    public static MetodosEntrenador            metEn =  new MetodosEntrenador(); 
+    public static MetodosJugadores             metJ  =  new MetodosJugadores();
+    public static MetodosTorneo                metT  =  new MetodosTorneo();
+    
+    
+    
+    
+    
     /**
      * Creates new form Login
      */
@@ -66,9 +85,10 @@ public class Interfaz_Login extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(30, 30, 30)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(30, 30, 30)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel1)
                             .addComponent(jLabel2))
@@ -76,18 +96,15 @@ public class Interfaz_Login extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(nombreUsuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(contraseñaTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 133, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(IngresarBtn)))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel3)))
+                            .addComponent(IngresarBtn))))
                 .addContainerGap(195, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(28, 28, 28)
+                .addGap(39, 39, 39)
                 .addComponent(jLabel3)
-                .addGap(29, 29, 29)
+                .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(nombreUsuarioTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))

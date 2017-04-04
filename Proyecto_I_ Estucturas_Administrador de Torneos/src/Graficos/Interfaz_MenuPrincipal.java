@@ -5,12 +5,24 @@
  */
 package Graficos;
 
+import Entidades.Equipos;
+import Metodos.MetodosEntrenador;
+import Metodos.MetodosEquipos;
+import Metodos.MetodosJugadores;
+import Metodos.MetodosTorneo;
+import Metodos.Metodos_Enlace_Torneo_Equipo;
+
 /**
  *
  * @author Usuario
  */
 public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
-
+    
+    
+   
+    
+   
+    
     /**
      * Creates new form Interfaz_MenuPrincipal
      */
@@ -89,7 +101,12 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
 
         jMenuBar1.add(jMenu2);
 
-        jMenu4.setText("Entrenador");
+        jMenu4.setText("Enlaces");
+        jMenu4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu4MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu4);
 
         jMenu3.setText("Jugador");
@@ -120,22 +137,24 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+    
     private void jMenuItemAgregarEntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEntrenadorActionPerformed
         // TODO add your handling code here:
+        Interfaz_Login.entrenador.setVisible(true);
         this.dispose();
-        new Interfaz_Entrenador().setVisible(true);
     }//GEN-LAST:event_jMenuItemAgregarEntrenadorActionPerformed
 
     private void jMenuItemAgregarJugadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarJugadorActionPerformed
         // TODO add your handling code here:
+        Interfaz_Login.jugadores.setVisible(true);
         this.dispose();
-        new Interfaz_Jugadores().setVisible(true);
     }//GEN-LAST:event_jMenuItemAgregarJugadorActionPerformed
 
     private void jMenuItemAgregarEquipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEquipoActionPerformed
         // TODO add your handling code here:
+        Interfaz_Login.equipos.setVisible(true);
         this.dispose();
-        new Interfaz_Equipos().setVisible(true);
     }//GEN-LAST:event_jMenuItemAgregarEquipoActionPerformed
 
     private void jMenuItemAgregarEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEstadioActionPerformed
@@ -143,9 +162,14 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemAgregarEstadioActionPerformed
 
     private void jMenuItemAgregarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarTorneoActionPerformed
+        Interfaz_Login.torneo.setVisible(true);
         this.dispose();
-        new Interfaz_Torneo().setVisible(true);
     }//GEN-LAST:event_jMenuItemAgregarTorneoActionPerformed
+
+    private void jMenu4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu4MouseClicked
+        Interfaz_Login.enlaces.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenu4MouseClicked
 
     /**
      * @param args the command line arguments

@@ -8,7 +8,7 @@ import  Entidades.*;
 import javax.swing.ImageIcon;
 /**
  *
- * @author Usuario
+ * @author UsuarioetodosEquipos
  */
 public class MetodosEquipos {
     // esto es una lista doble circular

@@ -1,10 +1,11 @@
-/*
+/*-
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
 package Metodos;
 import Entidades.*;
+import Graficos.Interfaz_MenuPrincipal;
 
 /**
  *
@@ -12,55 +13,13 @@ import Entidades.*;
  */
 public class Metodos_Enlace_Torneo_Equipo {
     Torneos inicioT;
-    Equipos inicioE;
-   
-    public Torneos VerificaTorneo(String nombreTorneo)
+    Equipos inicioE;   
+    public String insertarInicioEnlaceTorneoEquipo(String nombreTorneo,String nombreEquipo,Equipos equipo,Torneos torneo)
     {
-        if(inicioT == null )
-        {
-            return null;
-        }
-        Torneos aux=inicioT;
-        while(aux != null)
-        {
-            if(aux.nombre.equals(nombreTorneo))
-            {
-               return aux;
-            }
-            aux=aux.sig;
-        }
-        return null;
-    }
-    
-    public Equipos VerificaEquipo(String nombreEquipo)
-    {
-        if(inicioE == null)
-        {
-            return null;
-        }
-        
-        if(inicioE.nombre.equals(nombreEquipo))
-        {
-            return inicioE;
-        }
-        
-        Equipos temp=inicioE;
-        Equipos aux =inicioE;
-        while(aux.sig != temp)
-        {
-            if(aux.nombre.equals(nombreEquipo))
-            {
-                return aux;
-            }
-            aux=aux.sig;
-        }
-        return null;
-    }
-    
-    public String insertarInicioEnlaceTorneoEquipo(String nombreTorneo,String nombreEquipo)
-    {
-        Torneos Torneo=VerificaTorneo(nombreTorneo);
-        Equipos Equipo=VerificaEquipo(nombreEquipo);
+        //Torneos Torneo=VerificaTorneo(nombreTorneo);
+        //Equipos Equipo=VerificaEquipo(nombreEquipo);
+        Torneos Torneo=torneo;
+        Equipos Equipo=equipo;
         
         if(Torneo != null)
         {

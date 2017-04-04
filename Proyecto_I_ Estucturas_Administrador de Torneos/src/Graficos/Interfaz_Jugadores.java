@@ -14,7 +14,7 @@ import javax.swing.JOptionPane;
  */
 public class Interfaz_Jugadores extends javax.swing.JFrame {
     
-    MetodosJugadores metJ =new MetodosJugadores();
+    //MetodosJugadores metJ =new MetodosJugadores();
     DefaultListModel <String> ListModel = new DefaultListModel <>();// esto es para poder usar la jlist1
     
     
@@ -61,6 +61,7 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
         jButton1_Insertar_al_Inicio_Jugador = new javax.swing.JButton();
         jButton2_Insertar_Final_ = new javax.swing.JButton();
         jButton1_Imprime = new javax.swing.JButton();
+        jButton1_atras_ = new javax.swing.JButton();
 
         jCheckBox1.setText("jCheckBox1");
 
@@ -136,6 +137,13 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
             }
         });
 
+        jButton1_atras_.setText("Atras");
+        jButton1_atras_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_atras_ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -147,53 +155,54 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel9)
-                        .addGap(261, 261, 261))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton1_Insertar_al_Inicio_Jugador)
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2_Insertar_Final_)
-                                .addGap(316, 316, 316)
-                                .addComponent(jButton1_Imprime))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel5))
-                                    .addComponent(jLabel4)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createSequentialGroup()
-                                                    .addComponent(jLabel3)
-                                                    .addGap(36, 36, 36))
-                                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                                    .addComponent(jLabel8)
-                                                    .addGap(31, 31, 31)))
-                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                    .addComponent(jTextField1)
-                                                    .addComponent(jTextField2))
-                                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(jSpinner3, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jSpinner4, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.LEADING))))))
-                                .addGap(28, 28, 28)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addContainerGap(22, Short.MAX_VALUE))))
+                        .addGap(180, 180, 180)
+                        .addComponent(jButton1_atras_))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                        .addGroup(layout.createSequentialGroup()
+                            .addComponent(jButton1_Insertar_al_Inicio_Jugador)
+                            .addGap(18, 18, 18)
+                            .addComponent(jButton2_Insertar_Final_)
+                            .addGap(316, 316, 316)
+                            .addComponent(jButton1_Imprime))
+                        .addGroup(layout.createSequentialGroup()
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel7)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel6)
+                                    .addComponent(jLabel5))
+                                .addComponent(jLabel4)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                    .addComponent(jLabel2, javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createSequentialGroup()
+                                                .addComponent(jLabel3)
+                                                .addGap(36, 36, 36))
+                                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                                .addComponent(jLabel8)
+                                                .addGap(31, 31, 31)))
+                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                                .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                                .addComponent(jTextField1)
+                                                .addComponent(jTextField2))
+                                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                                .addComponent(jSpinner3, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jSpinner4, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jSpinner2, javax.swing.GroupLayout.Alignment.LEADING)
+                                                .addComponent(jSpinner1, javax.swing.GroupLayout.Alignment.LEADING))))))
+                            .addGap(28, 28, 28)
+                            .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 439, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addContainerGap(22, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(26, 26, 26)
+                .addGap(23, 23, 23)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jLabel9))
+                    .addComponent(jLabel9)
+                    .addComponent(jButton1_atras_))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
@@ -243,17 +252,17 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
 
     // aqui esto quemando datos;
     // Jugadores de Costa Rica
-    String nuevo1=metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
-    String nuevo2=metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
-    String nuevo3=metJ.InsertarInicio("Acosta"   , 2,8,3,8,1,"Defensa");
-    String nuevo4=metJ.InsertarInicio("Ganzalesz", 3,7,3,4,1,"Defensa");
-    String nuevo5=metJ.InsertarInicio("Umaña"    , 4,5,3,8,7,"Defensa");
-    String nuevo6=metJ.InsertarInicio("Cubero"   , 5,8,6,8,1,"Medio Campo");
-    String nuevo7=metJ.InsertarInicio("Borges"   , 6,8,10,8,9,"Medio Campo");
-    String nuevo8=metJ.InsertarInicio("Tejeda"   , 7,2,1,8,9,"Medio Campo");
-    String nuevo9=metJ.InsertarInicio("Bolaños"   , 8,4,1,2,9,"Medio Campo");
-    String nuevo10=metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
-    String nuevo11=metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
+    //String nuevo1=Interfaz_MenuPrincipal.metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
+    //String nuevo2=Interfaz_MenuPrincipal.metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
+    //String nuevo3=Interfaz_MenuPrincipal.metJ.InsertarInicio("Acosta"   , 2,8,3,8,1,"Defensa");
+    //String nuevo4=Interfaz_MenuPrincipal.metJ.InsertarInicio("Ganzalesz", 3,7,3,4,1,"Defensa");
+    //String nuevo5=Interfaz_MenuPrincipal.metJ.InsertarInicio("Umaña"    , 4,5,3,8,7,"Defensa");
+    //String nuevo6=Interfaz_MenuPrincipal.metJ.InsertarInicio("Cubero"   , 5,8,6,8,1,"Medio Campo");
+    //String nuevo7=Interfaz_MenuPrincipal.metJ.InsertarInicio("Borges"   , 6,8,10,8,9,"Medio Campo");
+    //String nuevo8=Interfaz_MenuPrincipal.metJ.InsertarInicio("Tejeda"   , 7,2,1,8,9,"Medio Campo");
+    //String nuevo9=Interfaz_MenuPrincipal.metJ.InsertarInicio("Bolaños"   , 8,4,1,2,9,"Medio Campo");
+    //String nuevo10=Interfaz_MenuPrincipal.metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
+    //String nuevo11=Interfaz_MenuPrincipal.metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
 
     
     
@@ -270,12 +279,12 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
 
             String posicion = (String) jComboBox1.getSelectedItem();
 
-            String insertar=metJ.InsertarInicio(nombre, cedula, fisico, defensa, dribbling, disparo,posicion);
+            String insertar=Interfaz_Login.metJ.InsertarInicio(nombre, cedula, fisico, defensa, dribbling, disparo,posicion);
 
             JOptionPane.showMessageDialog(null, insertar);
-            Imprimir();
-            jTextField1.setText(null);
-            jTextField2.setText(null);
+            //
+            jTextField1.setText("");
+            jTextField2.setText("");
             
             
         }
@@ -297,12 +306,12 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
 
             String posicion = (String) jComboBox1.getSelectedItem();
 
-            String insertar=metJ.InsertarFinal(nombre, cedula, fisico, defensa, dribbling, disparo,posicion);
+            String insertar=Interfaz_Login.metJ.InsertarFinal(nombre, cedula, fisico, defensa, dribbling, disparo,posicion);
 
             JOptionPane.showMessageDialog(null, insertar);
-            Imprimir();
-            jTextField1.setText(null);
-            jTextField2.setText(null);
+            //
+            jTextField1.setText("");
+            jTextField2.setText("");
             
             
         }
@@ -316,10 +325,15 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
         Imprimir();
     }//GEN-LAST:event_jButton1_ImprimeActionPerformed
 
+    private void jButton1_atras_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_atras_ActionPerformed
+        Interfaz_Login.principal.setVisible(true);
+        this.dispose(); 
+    }//GEN-LAST:event_jButton1_atras_ActionPerformed
+
     
     public void Imprimir(){
         
-        Jugadores temp = metJ.inicio;
+        Jugadores temp = Interfaz_Login.metJ.inicio;
         ListModel.clear();
         while(temp != null)
         {
@@ -373,6 +387,7 @@ public class Interfaz_Jugadores extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_Imprime;
     private javax.swing.JButton jButton1_Insertar_al_Inicio_Jugador;
+    private javax.swing.JButton jButton1_atras_;
     private javax.swing.JButton jButton2_Insertar_Final_;
     private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JComboBox<String> jComboBox1;

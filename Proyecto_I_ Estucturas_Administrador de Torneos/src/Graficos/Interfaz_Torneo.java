@@ -15,8 +15,9 @@ import javax.swing.JOptionPane;
 public class Interfaz_Torneo extends javax.swing.JFrame {
 
     
-    MetodosTorneo met =new MetodosTorneo();
+    //MetodosTorneo met =new MetodosTorneo();
     DefaultListModel <String> ListModel = new DefaultListModel <>();
+    
     
     
     /**
@@ -46,6 +47,7 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
         jList1 = new javax.swing.JList<>();
         jLabel3 = new javax.swing.JLabel();
         jButton1_Impre_informacion_ = new javax.swing.JButton();
+        jButton1_Atras_ = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setPreferredSize(new java.awt.Dimension(583, 360));
@@ -88,6 +90,13 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
             }
         });
 
+        jButton1_Atras_.setText("Atras");
+        jButton1_Atras_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1_Atras_ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -108,10 +117,12 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jButton2_Insertar_Final_Torneo_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                     .addComponent(jButton1_Insertar_Inicio_Torneo_))))
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(17, 17, 17)
-                                .addComponent(jLabel3))
+                                .addComponent(jLabel3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton1_Atras_))
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(18, 18, 18)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 242, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -123,11 +134,13 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addGap(24, 24, 24)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(30, 30, 30)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1_Atras_)))
+                .addGap(25, 25, 25)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -145,7 +158,7 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    String nuevo1=met.insertarInicio("Fifa Mundial 2014");
+   // String nuevo1=Interfaz_MenuPrincipal.metT.insertarInicio("Fifa Mundial 2014");
     
     
     
@@ -154,11 +167,11 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
        try
        {
         String nombre=jTextField1.getText();
-        String insertar=met.insertarInicio(nombre);
+        String insertar=Interfaz_Login.metT.insertarInicio(nombre);
         
         JOptionPane.showMessageDialog(null, insertar);
-        Imprimir();
-        
+        //
+        jTextField1.setText("");
        }
        catch (Exception e) 
        {
@@ -170,10 +183,11 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
        try
        {
         String nombre=jTextField1.getText();
-        String insertar=met.insertarFinal(nombre);
+        String insertar=Interfaz_Login.metT.insertarFinal(nombre);
         
         JOptionPane.showMessageDialog(null, insertar);
-        Imprimir();
+        //
+        jTextField1.setText("");
        }
        catch (Exception e) 
        {
@@ -185,11 +199,16 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
         Imprimir();
     }//GEN-LAST:event_jButton1_Impre_informacion_ActionPerformed
 
+    private void jButton1_Atras_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Atras_ActionPerformed
+        Interfaz_Login.principal.setVisible(true);
+        this.dispose(); 
+    }//GEN-LAST:event_jButton1_Atras_ActionPerformed
+
     //String insertar=met.insertarFinal("Mundal 2010");
     
     public void Imprimir(){
         
-        Torneos temp = met.inicio;
+        Torneos temp =Interfaz_Login.metT.inicio;
         ListModel.clear();
         while(temp != null)
         {
@@ -235,6 +254,7 @@ public class Interfaz_Torneo extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1_Atras_;
     private javax.swing.JButton jButton1_Impre_informacion_;
     private javax.swing.JButton jButton1_Insertar_Inicio_Torneo_;
     private javax.swing.JButton jButton2_Insertar_Final_Torneo_;
