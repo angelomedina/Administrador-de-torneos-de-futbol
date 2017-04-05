@@ -12,8 +12,8 @@ import Graficos.Interfaz_MenuPrincipal;
  * @author Usuario
  */
 public class Metodos_Enlace_Torneo_Equipo {
-    Torneos inicioT;
-    Equipos inicioE;   
+    //Torneos inicioT;
+    //Equipos inicioE;   
     public String insertarInicioEnlaceTorneoEquipo(String nombreTorneo,String nombreEquipo,Equipos equipo,Torneos torneo)
     {
         //Torneos Torneo=VerificaTorneo(nombreTorneo);
@@ -31,7 +31,7 @@ public class Metodos_Enlace_Torneo_Equipo {
                 if(Equipo.sigSub ==null )
                 {
                     Equipo.sigSub=sub;
-                    return "Enlados";
+                    return "Enlazados";
                 }
                 sub.sig=Equipo.sigSub;
                 Equipo.sigSub=sub;
@@ -41,10 +41,15 @@ public class Metodos_Enlace_Torneo_Equipo {
                 
                 
             }
+            else
+            {
             return "No se enontro el Equipo";
+            }
         }
+        else
+        {
         return "No se encontro el Torneo";
-        
+        }
         
         
         

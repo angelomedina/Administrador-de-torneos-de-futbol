@@ -76,6 +76,11 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         jMenu2.add(jMenuItemAgregarJugador);
 
         jMenuItemAgregarEstadio.setText("Estadio");
+        jMenuItemAgregarEstadio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuItemAgregarEstadioMouseClicked(evt);
+            }
+        });
         jMenuItemAgregarEstadio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItemAgregarEstadioActionPerformed(evt);
@@ -157,10 +162,6 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItemAgregarEquipoActionPerformed
 
-    private void jMenuItemAgregarEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEstadioActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jMenuItemAgregarEstadioActionPerformed
-
     private void jMenuItemAgregarTorneoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarTorneoActionPerformed
         Interfaz_Login.torneo.setVisible(true);
         this.dispose();
@@ -170,6 +171,16 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         Interfaz_Login.enlaces.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenu4MouseClicked
+
+    private void jMenuItemAgregarEstadioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEstadioMouseClicked
+       Interfaz_Login.estadio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItemAgregarEstadioMouseClicked
+
+    private void jMenuItemAgregarEstadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemAgregarEstadioActionPerformed
+        Interfaz_Login.estadio.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItemAgregarEstadioActionPerformed
 
     /**
      * @param args the command line arguments

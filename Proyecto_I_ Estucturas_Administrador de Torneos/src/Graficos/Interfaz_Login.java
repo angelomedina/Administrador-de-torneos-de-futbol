@@ -25,6 +25,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
     public static Interfaz_Torneo        torneo     = new Interfaz_Torneo();
     public static Interfaz_Equipos       equipos    = new Interfaz_Equipos();
     public static Interfaz_Enlaces       enlaces   =  new Interfaz_Enlaces();
+    public static Interfaz_Estadio       estadio   =  new Interfaz_Estadio();
     //metodos
     public static Metodos_Enlace_Torneo_Equipo metET =  new Metodos_Enlace_Torneo_Equipo();
     public static MetodosEquipos               metE  =  new MetodosEquipos();

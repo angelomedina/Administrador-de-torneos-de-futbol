@@ -7,7 +7,6 @@ package Graficos;
 import java.io.File;
 import javax.swing.*;
 import Entidades.*;
-import Metodos.*;
 /**
  *
  * @author Oscar
@@ -21,7 +20,7 @@ public class Interfaz_Estadio extends javax.swing.JFrame {
     Gestion_de_Imagenes gestionCasa = new Gestion_de_Imagenes();
     Gestion_de_Imagenes gestionVisita = new Gestion_de_Imagenes();
     
-    MetodosEquipos met =new MetodosEquipos();
+    //MetodosEquipos met =new MetodosEquipos();
     DefaultListModel <String> ListModel = new DefaultListModel <>();// esto es para poder usar la jlist1
     /**
      * Creates new form JFGestionA
@@ -216,17 +215,17 @@ public class Interfaz_Estadio extends javax.swing.JFrame {
             String nombre=jTextField1.getText();
             int    codigo=Integer.parseInt(jTextField2.getText());
             
-            ImageIcon ImagenCasa=(ImageIcon) lblImagen1.getIcon();
+            //ImageIcon ImagenCasa=(ImageIcon) lblImagen1.getIcon();
             ImageIcon ImagenVisita=(ImageIcon) lblImagen2.getIcon();
             
-            if (ImagenCasa != null || ImagenVisita != null)
+            if ( ImagenVisita != null)
             {
-                boolean verifica=met.verificaCodigo(codigo);
+                boolean verifica=Interfaz_Login.metE.verificaCodigo(codigo);
                 if(verifica==false)
                 {
-                    String insertar=met.InsertarInicio(nombre, codigo, ImagenCasa, ImagenVisita);
+                    //String insertar=Interfaz_Login.metE.InsertarInicio(nombre, codigo, ImagenCasa, ImagenVisita);
 
-                    JOptionPane.showMessageDialog(null, insertar);
+                    //JOptionPane.showMessageDialog(null, insertar);
                     Imprimir();
                 }
                 else
@@ -253,17 +252,17 @@ public class Interfaz_Estadio extends javax.swing.JFrame {
             String nombre=jTextField1.getText();
             int    codigo=Integer.parseInt(jTextField2.getText());
             
-            ImageIcon ImagenCasa=(ImageIcon) lblImagen1.getIcon();
+            //mageIcon ImagenCasa=(ImageIcon) lblImagen1.getIcon();
             ImageIcon ImagenVisita=(ImageIcon) lblImagen2.getIcon();
             
-            if (ImagenCasa != null || ImagenVisita != null)
+            if ( ImagenVisita != null)
             {
-                boolean verifica=met.verificaCodigo(codigo);
+                boolean verifica=Interfaz_Login.metE.verificaCodigo(codigo);
                 if(verifica==false)
                 {
-                    String insertar=met.InsertarFinal(nombre, codigo, ImagenCasa, ImagenVisita);
+                    //String insertar=Interfaz_Login.metE.InsertarFinal(nombre, codigo, ImagenCasa, ImagenVisita);
 
-                    JOptionPane.showMessageDialog(null, insertar);
+                    //JOptionPane.showMessageDialog(null, insertar);
                     Imprimir();
                 }
                 else
@@ -289,14 +288,14 @@ public class Interfaz_Estadio extends javax.swing.JFrame {
     public void Imprimir()
     {
         ListModel.clear();
-        if (met.inicio==met.inicio.sig)
+        if (Interfaz_Login.metE.inicio==Interfaz_Login.metE.inicio.sig)
         {
-          ListModel.addElement("Nombre:  "+ met.inicio.nombre +"  Codigo:   "+ met.inicio.codigo);// muestra en ListModel el nombre y la edad del Cliente
+          ListModel.addElement("Nombre:  "+ Interfaz_Login.metE.inicio.nombre +"  Codigo:   "+ Interfaz_Login.metE.inicio.codigo);// muestra en ListModel el nombre y la edad del Cliente
         }
         else
         {
-            Equipos temp = met.inicio;
-            Equipos aux = met.inicio;
+            Equipos temp = Interfaz_Login.metE.inicio;
+            Equipos aux = Interfaz_Login.metE.inicio;
             while(aux.sig != temp)
             {
                 ListModel.addElement("Nombre: "+aux.nombre +"  Codigo:  "+ aux.codigo);// muestra en ListModel el nombre y la edad del Cliente

@@ -5,6 +5,7 @@
  */
 package Graficos;
 
+import Entidades.Enlace_Torneo_Euipos;
 import Entidades.Equipos;
 import Entidades.Torneos;
 import Metodos.MetodosEquipos;
@@ -12,6 +13,7 @@ import Metodos.MetodosTorneo;
 import Metodos.Metodos_Enlace_Torneo_Equipo;
 import javax.swing.JOptionPane;
 import Graficos.Interfaz_MenuPrincipal;
+import javax.swing.DefaultListModel;
 
 /**
  *
@@ -19,6 +21,7 @@ import Graficos.Interfaz_MenuPrincipal;
  */
 public class Interfaz_Enlaces extends javax.swing.JFrame {
 
+    DefaultListModel <String> ListModelTorneo = new DefaultListModel <>();
     
     /**
      * Creates new form Interfaz_Enlaces
@@ -52,7 +55,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
         jButton2 = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
+        jButton4_Imprmir_ = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
 
@@ -91,7 +94,12 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
             }
         });
 
-        jButton4.setText("Mostrar");
+        jButton4_Imprmir_.setText("Mostrar");
+        jButton4_Imprmir_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4_Imprmir_ActionPerformed(evt);
+            }
+        });
 
         jScrollPane1.setViewportView(jList1);
 
@@ -133,7 +141,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton4, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton4_Imprmir_, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
@@ -175,7 +183,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                         .addGap(6, 6, 6)
                         .addComponent(jScrollPane1)
                         .addGap(18, 18, 18)
-                        .addComponent(jButton4)
+                        .addComponent(jButton4_Imprmir_)
                         .addGap(28, 28, 28))))
         );
 
@@ -197,7 +205,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
             Equipos veri2=VerificaEquipo(nombreEquipo);
             
             String insertado=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo(nombreTorneo, nombreEquipo,veri2,veri1);
-            
+            imprimirSub2();
             JOptionPane.showMessageDialog(null,insertado);
         }
         catch(Exception e )
@@ -211,6 +219,10 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
         Interfaz_Login.principal.setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4_Imprmir_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4_Imprmir_ActionPerformed
+      imprimirSub2();
+    }//GEN-LAST:event_jButton4_Imprmir_ActionPerformed
 
     public Torneos VerificaTorneo(String nombreTorneo)
     {
@@ -236,15 +248,10 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
         {
             return null;
         }
-        
-        if(Interfaz_Login.metE.inicio.nombre.equals(nombreEquipo))
-        {
-            return Interfaz_Login.metE.inicio;
-        }
-        
-        Equipos temp=Interfaz_Login.metE.inicio;
+       
         Equipos aux =Interfaz_Login.metE.inicio;
-        while(aux.sig != temp)
+        
+        while(aux != Interfaz_Login.metE.fin)
         {
             if(aux.nombre.equals(nombreEquipo))
             {
@@ -252,8 +259,65 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
             }
             aux=aux.sig;
         }
+        
+        if(Interfaz_Login.metE.fin.nombre.equals(nombreEquipo))
+        {
+            return Interfaz_Login.metE.fin;
+        }
         return null;
     }
+    
+    //fecha 04/04/17
+    // por este metodo va a imprimir por cada torneo sus integrantes
+    public void imprimirSub2()  
+    {
+        ListModelTorneo.clear();
+        if (Interfaz_Login.metE.inicio==null)
+        {
+            JOptionPane.showMessageDialog(null, "Lista Vacia");
+        }
+        
+        else
+        {          
+            Torneos torneo = Interfaz_Login.metT.inicio;    // entro a los Torneo
+            while(  torneo != null)
+            { 
+              Equipos equipo = Interfaz_Login.metE.inicio;
+              if(equipo==null)
+              {
+                JOptionPane.showMessageDialog(null,"Lista de equipos esta vacia");
+                break;
+              }
+              else
+              {
+ 
+                while(equipo != Interfaz_Login.metE.fin)
+                {
+                    Enlace_Torneo_Euipos  enlace =equipo.sigSub;
+                    while(enlace != null)
+                    {
+                        if(enlace.sigTorneo==torneo)
+                        {
+                            ListModelTorneo.addElement("Torneo---> "+torneo.nombre +"  "+"Equipo----> "+equipo.nombre);
+                            break;
+                        }
+
+                    }
+                    equipo=equipo.sig;
+                }
+                if(Interfaz_Login.metE.fin.sigSub.sigTorneo==torneo)
+                {
+                    ListModelTorneo.addElement("Torneo---> "+torneo.nombre +"  "+"Equipo----> "+equipo.nombre);
+                    break;
+                }
+                
+              }
+              torneo=torneo.sig;
+            }
+            jList1.setModel(ListModelTorneo); 
+        }
+    }  
+    
     
     /**
      * @param args the command line arguments
@@ -294,7 +358,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
     private javax.swing.JButton jButton1_Enlace_Equipo_Torneo_;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
+    private javax.swing.JButton jButton4_Imprmir_;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
