@@ -17,6 +17,8 @@ public class Entrenadores {
     private String  _nombre;
     private int     _id;
     
+    public Enlace_Entrenador_Equipos sigSub;
+    
     //constructor 
     public Entrenadores(){};
     
@@ -42,6 +44,10 @@ public class Entrenadores {
 
     public void setId(int _id) {
         this._id = _id;
+    }
+
+    public boolean getId(int contraEntrenadores) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
    
     

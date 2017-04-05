@@ -9,12 +9,12 @@ package Entidades;
  *
  * @author Usuario
  */
-public class Enlace_Torneo_Euipos {
+public class Enlace_Torneo_Equipos {
     
-    public Enlace_Torneo_Euipos sig;
+    public Enlace_Torneo_Equipos sig;
     public Torneos    sigTorneo;
 
-    public Enlace_Torneo_Euipos()
+    public Enlace_Torneo_Equipos()
     {
         this.sig =null;
         this.sigTorneo =null;

@@ -19,7 +19,7 @@ public class Equipos {
     public ImageIcon imagenVisita;
     
     public Equipos sig,ant; 
-    public Enlace_Torneo_Euipos sigSub; // es para vincular este equipo al torneo
+    public Enlace_Torneo_Equipos sigSub; // es para vincular este equipo al torneo
     
     public Equipos(String nombre,int codigo,ImageIcon ImagenCasa,ImageIcon ImagenVisita)
     {

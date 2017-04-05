@@ -5,7 +5,8 @@
  */
 package Graficos;
 
-import Entidades.Enlace_Torneo_Euipos;
+import Entidades.Enlace_Torneo_Equipos;
+import Entidades.Entrenadores;
 import Entidades.Equipos;
 import Entidades.Torneos;
 import Metodos.MetodosEquipos;
@@ -52,12 +53,13 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         jTextField3 = new javax.swing.JTextField();
         jTextField4 = new javax.swing.JTextField();
-        jButton2 = new javax.swing.JButton();
+        jButton2_enlace2_ = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
         jButton4_Imprmir_ = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jList1 = new javax.swing.JList<>();
+        jLabel7 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Enlaces");
@@ -81,11 +83,16 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
 
         jLabel5.setText("Nombre del Equipo");
 
-        jButton2.setText("Enlazar");
+        jButton2_enlace2_.setText("Enlazar");
+        jButton2_enlace2_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2_enlace2_ActionPerformed(evt);
+            }
+        });
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel6.setText("Enlazar Equipo a Torneo");
+        jLabel6.setText("Enlazar Entrenador a Equipo");
 
         jButton3.setText("Atras");
         jButton3.addActionListener(new java.awt.event.ActionListener() {
@@ -114,35 +121,32 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                     .addComponent(jLabel6)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel2)
-                        .addGap(18, 18, 18)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel3)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton1_Enlace_Equipo_Torneo_))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                    .addGroup(layout.createSequentialGroup()
                         .addComponent(jLabel4)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jTextField3))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel5)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(18, 18, 18)
-                                .addComponent(jButton2))
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(20, 20, 20)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 284, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton1_Enlace_Equipo_Torneo_)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jButton2_enlace2_)
+                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jButton4_Imprmir_, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 354, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(29, 29, 29))
         );
         layout.setVerticalGroup(
@@ -154,7 +158,10 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(28, 28, 28)
-                        .addComponent(jButton3)))
+                        .addComponent(jButton3))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel7)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -177,7 +184,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                             .addComponent(jLabel5)
                             .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
-                        .addComponent(jButton2)
+                        .addComponent(jButton2_enlace2_)
                         .addContainerGap(43, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGap(6, 6, 6)
@@ -204,9 +211,25 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
             Torneos veri1=VerificaTorneo(nombreTorneo);
             Equipos veri2=VerificaEquipo(nombreEquipo);
             
-            String insertado=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo(nombreTorneo, nombreEquipo,veri2,veri1);
-            imprimirSub2();
-            JOptionPane.showMessageDialog(null,insertado);
+            if(veri1 != null)
+            {
+                if (veri2 != null)
+                {
+                    String insertado=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo(nombreTorneo, nombreEquipo,veri2,veri1);
+                    imprimirSub2();
+                    JOptionPane.showMessageDialog(null,insertado);
+                    jLabel7.setText("Informacion enlace Equipo/Torneo");
+
+                }
+                else
+                {
+                    JOptionPane.showMessageDialog(null,"No se logro encontrar el Equipo");
+                }
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"No se logro encontrar el Torneo");
+            }
         }
         catch(Exception e )
         {
@@ -224,6 +247,66 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
       imprimirSub2();
     }//GEN-LAST:event_jButton4_Imprmir_ActionPerformed
 
+    private void jButton2_enlace2_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_enlace2_ActionPerformed
+        try
+        {
+            
+            String nombreEntrenador=jTextField3.getText();
+            String nombreEquipo=jTextField4.getText();
+           
+            Entrenadores veri1=verificaEntrenador(nombreEntrenador);
+            Equipos veri2=VerificaEquipo(nombreEquipo);
+
+            String insertado=Interfaz_Login.metEnE.insertarEnlaceEntrenadorTorneo(nombreEntrenador,nombreEquipo,veri2,veri1);
+            JOptionPane.showMessageDialog(null,insertado);
+            if(insertado.equals("Enlazados"))
+            {
+                jLabel7.setText("Informacion enlace Entrenador/Equipo");
+                ListModelTorneo.clear();
+                ListModelTorneo.addElement("Entreador: "+nombreEntrenador+"   se enlazo con   "+"Equipo: "+nombreEquipo);
+                jList1.setModel(ListModelTorneo);
+            }
+            
+        }
+        catch(Exception e )
+        {
+            JOptionPane.showMessageDialog(null,"Error en los datos");
+        }
+    }//GEN-LAST:event_jButton2_enlace2_ActionPerformed
+
+    
+    public Entrenadores verificaEntrenador(String nombre)
+    {
+        
+        Entrenadores temp =Interfaz_Login.metEn.inicio;
+        Entrenadores  aux = Interfaz_Login.metEn.inicio;
+        
+        if (Interfaz_Login.metEn.inicio==null)
+         {
+             return null;
+         }
+        if (Interfaz_Login.metEn.inicio.getNombre().equals(nombre))
+        {
+          return Interfaz_Login.metEn.inicio;
+        }
+        else
+        {
+            while(aux.sig != temp)
+            {
+                if (aux.getNombre().equals(nombre))
+                {
+                    return aux;
+                }    
+                aux=aux.sig;
+            }
+            if (aux.getNombre().equals(nombre))
+            {
+                    return aux;
+            }
+            return null;   
+        }  
+    }
+    
     public Torneos VerificaTorneo(String nombreTorneo)
     {
         if(Interfaz_Login.metT.inicio == null )
@@ -244,7 +327,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
     
     public Equipos VerificaEquipo(String nombreEquipo)
     {
-        if(Interfaz_Login.metT.inicio== null)
+        if(Interfaz_Login.metE.inicio== null)
         {
             return null;
         }
@@ -266,7 +349,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
         }
         return null;
     }
-    
+
     //fecha 04/04/17
     // por este metodo va a imprimir por cada torneo sus integrantes
     public void imprimirSub2()  
@@ -293,12 +376,12 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
  
                 while(equipo != Interfaz_Login.metE.fin)
                 {
-                    Enlace_Torneo_Euipos  enlace =equipo.sigSub;
+                    Enlace_Torneo_Equipos  enlace =equipo.sigSub;
                     while(enlace != null)
                     {
                         if(enlace.sigTorneo==torneo)
                         {
-                            ListModelTorneo.addElement("Torneo---> "+torneo.nombre +"  "+"Equipo----> "+equipo.nombre);
+                            ListModelTorneo.addElement("Torneo: "+torneo.nombre +"  se enlazo con "+"Equipo:  "+equipo.nombre);
                             break;
                         }
 
@@ -307,7 +390,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                 }
                 if(Interfaz_Login.metE.fin.sigSub.sigTorneo==torneo)
                 {
-                    ListModelTorneo.addElement("Torneo---> "+torneo.nombre +"  "+"Equipo----> "+equipo.nombre);
+                    ListModelTorneo.addElement("Torneo: "+torneo.nombre +"   se enlazo con   "+"Equipo:  "+equipo.nombre);
                     break;
                 }
                 
@@ -356,7 +439,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_Enlace_Equipo_Torneo_;
-    private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton2_enlace2_;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4_Imprmir_;
     private javax.swing.JLabel jLabel1;
@@ -365,6 +448,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JList<String> jList1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextField jTextField1;

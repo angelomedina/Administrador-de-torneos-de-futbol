@@ -9,6 +9,7 @@ import Entidades.Equipos;
 import Metodos.MetodosEntrenador;
 import Metodos.MetodosEquipos;
 import Metodos.MetodosJugadores;
+import Metodos.MetodosLogin;
 import Metodos.MetodosTorneo;
 import Metodos.Metodos_Enlace_Torneo_Equipo;
 
@@ -49,8 +50,6 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         jMenuItemAgregarTorneo = new javax.swing.JMenuItem();
         jMenuItemAgregarEquipo = new javax.swing.JMenuItem();
         jMenu4 = new javax.swing.JMenu();
-        jMenu3 = new javax.swing.JMenu();
-        jMenu5 = new javax.swing.JMenu();
         jMenu6 = new javax.swing.JMenu();
         jMenu7 = new javax.swing.JMenu();
 
@@ -114,16 +113,20 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu4);
 
-        jMenu3.setText("Jugador");
-        jMenuBar1.add(jMenu3);
-
-        jMenu5.setText("Estadio");
-        jMenuBar1.add(jMenu5);
-
-        jMenu6.setText("Torneo");
+        jMenu6.setText("Ver Informacion");
+        jMenu6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu6MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu6);
 
         jMenu7.setText("Salir");
+        jMenu7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu7MouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenu7);
 
         setJMenuBar(jMenuBar1);
@@ -182,6 +185,16 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
         this.dispose();
     }//GEN-LAST:event_jMenuItemAgregarEstadioActionPerformed
 
+    private void jMenu7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu7MouseClicked
+        new Interfaz_Login(new MetodosLogin()).setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenu7MouseClicked
+
+    private void jMenu6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu6MouseClicked
+        Interfaz_Login.info.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenu6MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -219,9 +232,7 @@ public class Interfaz_MenuPrincipal extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu jMenu2;
-    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
-    private javax.swing.JMenu jMenu5;
     private javax.swing.JMenu jMenu6;
     private javax.swing.JMenu jMenu7;
     private javax.swing.JMenuBar jMenuBar1;

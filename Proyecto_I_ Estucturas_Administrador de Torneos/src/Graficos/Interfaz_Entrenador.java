@@ -261,7 +261,10 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
         if (verifica == false)
         {
             String insertado=Interfaz_Login.metEn.InsertarInicio(nombre, identificacion);
+          
+            
             JOptionPane.showMessageDialog(null, insertado); 
+
             //
             jTextField1.setText("");
             jTextField2.setText("");

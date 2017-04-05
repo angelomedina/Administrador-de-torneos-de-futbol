@@ -5,6 +5,9 @@
  */
 package Metodos;
 
+import Entidades.Entrenadores;
+import java.util.ArrayList;
+
 /**
  *
  * @author Admi
@@ -13,6 +16,8 @@ public class MetodosLogin {
     
     private String _nombreUsuarioAdmi="Fifa";
     private String _contraseñaAdmi="123";
+    
+    public ArrayList<Entrenadores> entrenadores = new ArrayList<>();
 
     public MetodosLogin() {
     }
@@ -32,6 +37,11 @@ public class MetodosLogin {
             return "Incorrecto";
         }
            
+    }
+    
+    public void usuarioEntrenador(Entrenadores entrenador)
+    {  
+        entrenadores.add(entrenador);
     }
     
 }

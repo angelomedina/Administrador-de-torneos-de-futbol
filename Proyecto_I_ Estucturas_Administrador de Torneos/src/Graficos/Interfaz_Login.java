@@ -5,6 +5,7 @@
  */
 package Graficos;
 
+import Entidades.Entrenadores;
 import Metodos.*;
 import javax.swing.JOptionPane;
 
@@ -13,25 +14,28 @@ import javax.swing.JOptionPane;
  * @author Admi
  */
 public class Interfaz_Login extends javax.swing.JFrame {
-    MetodosLogin metodos;
-    String nombreUsuario;
-    String contraseña;
-    private char tipoUsuario;
+
     
     //interfaces
-    public static Interfaz_MenuPrincipal principal  = new Interfaz_MenuPrincipal();
-    public static Interfaz_Entrenador    entrenador = new Interfaz_Entrenador();
-    public static Interfaz_Jugadores     jugadores  = new Interfaz_Jugadores();
-    public static Interfaz_Torneo        torneo     = new Interfaz_Torneo();
-    public static Interfaz_Equipos       equipos    = new Interfaz_Equipos();
-    public static Interfaz_Enlaces       enlaces   =  new Interfaz_Enlaces();
-    public static Interfaz_Estadio       estadio   =  new Interfaz_Estadio();
+    public static Interfaz_Info                  info  = new Interfaz_Info();
+    public static Interfaz_MenuPrincipal         principal  = new Interfaz_MenuPrincipal();
+    public static Interfaz_Entrenador            entrenador = new Interfaz_Entrenador();
+    public static Interfaz_Jugadores             jugadores  = new Interfaz_Jugadores();
+    public static Interfaz_Torneo                torneo     = new Interfaz_Torneo();
+    public static Interfaz_Equipos               equipos    = new Interfaz_Equipos();
+    public static Interfaz_Enlaces               enlaces   =  new Interfaz_Enlaces();
+    public static Interfaz_Estadio               estadio   =  new Interfaz_Estadio();
+    public static Interfaz_Usuario_Entrenador      userEntrenador  =  new Interfaz_Usuario_Entrenador();
+    
     //metodos
-    public static Metodos_Enlace_Torneo_Equipo metET =  new Metodos_Enlace_Torneo_Equipo();
-    public static MetodosEquipos               metE  =  new MetodosEquipos();
-    public static MetodosEntrenador            metEn =  new MetodosEntrenador(); 
-    public static MetodosJugadores             metJ  =  new MetodosJugadores();
-    public static MetodosTorneo                metT  =  new MetodosTorneo();
+    public static Metodos_Enlace_Torneo_Equipo     metET =  new Metodos_Enlace_Torneo_Equipo();
+    public static MetodosEquipos                   metE  =  new MetodosEquipos();
+    public static MetodosEntrenador                metEn =  new MetodosEntrenador(); 
+    public static MetodosJugadores                 metJ  =  new MetodosJugadores();
+    public static MetodosTorneo                    metT  =  new MetodosTorneo();
+    public static Metodos_Enlace_Entrenador_Equipo metEnE  =  new Metodos_Enlace_Entrenador_Equipo();
+    public static MetodosLogin                     metL  =  new MetodosLogin();
+    
     
     
     
@@ -42,7 +46,6 @@ public class Interfaz_Login extends javax.swing.JFrame {
      */
     public Interfaz_Login(MetodosLogin metodos) {  
         initComponents();
-        this.metodos = metodos;
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -121,19 +124,67 @@ public class Interfaz_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    //QUEMA DE DATOS
+    //Datos para entrenador
+    String Enuevo1=Interfaz_Login.metEn.InsertarInicio("Jorge Luis Pinto ",203040);
+    String Enuevo2=Interfaz_Login.metEn.InsertarInicio("Andrey Amdor ",213344);
+    String Enuevo3=Interfaz_Login.metEn.InsertarInicio("Oscar Ramirez ",223444);
+    String Enuevo4=Interfaz_Login.metEn.InsertarInicio("Bob Marley",233444);
+    String Enuevo5=Interfaz_Login.metEn.InsertarInicio("Rammstein",24);
+    String Enuevo6=Interfaz_Login.metEn.InsertarInicio("Skiller ",253444);
+    String Enuevo7=Interfaz_Login.metEn.InsertarInicio("Red Hot Chili Peppers ",233444);
+    //Datos para jugadores
+    String Jnuevo1=Interfaz_Login.metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
+    String Jnuevo2=Interfaz_Login.metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
+    String Jnuevo3=Interfaz_Login.metJ.InsertarInicio("Acosta"   , 2,8,3,8,1,"Defensa");
+    String Jnuevo4=Interfaz_Login.metJ.InsertarInicio("Ganzalesz", 3,7,3,4,1,"Defensa");
+    String Jnuevo5=Interfaz_Login.metJ.InsertarInicio("Umaña"    , 4,5,3,8,7,"Defensa");
+    String Jnuevo6=Interfaz_Login.metJ.InsertarInicio("Cubero"   , 5,8,6,8,1,"Medio Campo");
+    String Jnuevo7=Interfaz_Login.metJ.InsertarInicio("Borges"   , 6,8,10,8,9,"Medio Campo");
+    String Jnuevo8=Interfaz_Login.metJ.InsertarInicio("Tejeda"   , 7,2,1,8,9,"Medio Campo");
+    String Jnuevo9=Interfaz_Login.metJ.InsertarInicio("Bolaños"   , 8,4,1,2,9,"Medio Campo");
+    String Jnuevo10=Interfaz_Login.metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
+    String Jnuevo11=Interfaz_Login.metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
+    //Datos para equipos
+    String EQnuevo1=Interfaz_Login.metE.InsertarInicio("Costa Rica", 0, null, null);
+    String EQnuevo2=Interfaz_Login.metE.InsertarInicio("Estados Unidos", 1, null, null);
+    String EQnuevo3=Interfaz_Login.metE.InsertarInicio("Honduras", 2, null, null);
+    String EQnuevo4=Interfaz_Login.metE.InsertarInicio("Mexico", 3, null, null);
+    //Datos para torneo
+    String Tnuevo1=Interfaz_Login.metT.insertarInicio("Mundial 2014");
+    //Datos de enlace equipo/torneo
+    //String Ennuevo1=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014",Interfaz_Login.metT.insertarInicio("Mundial 2014"),Tnuevo1,Interfaz_Login.metE.InsertarInicio("Costa Rica", 0, null, null));
+    
     private void IngresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarBtnMouseClicked
         // TODO add your handling code here:
-        this.nombreUsuario = nombreUsuarioTxt.getText();
-        this.contraseña = contraseñaTxt.getText();
+        String nombreUsuario = nombreUsuarioTxt.getText();
+        String contraseña = contraseñaTxt.getText();
+        int contraEntrenadores=Integer.parseInt(contraseñaTxt.getText());
+       
         
-        String msg = metodos.iniciarSecion(nombreUsuario, contraseña);
-        JOptionPane.showMessageDialog(null, msg);
-        
-        if (msg.equals("Correcto"))
+        if (nombreUsuario.equals("Fifa") && contraseña.equals("123"))
         {
             this.dispose();
             new Interfaz_MenuPrincipal().setVisible(true);
         }
+        else
+        {
+            int bandera=0;
+            for(Entrenadores i:Interfaz_Login.metL.entrenadores){
+                if(i.getNombre().equals(nombreUsuario) && i.getId()==contraEntrenadores)
+                {
+                    bandera=1;
+                    this.dispose();
+                    new Interfaz_Usuario_Entrenador().setVisible(true);  
+                }
+            }
+            if(bandera==0)
+            {
+            JOptionPane.showMessageDialog(null,"Incorrecto");
+            }
+  
+        }
+        
         
     }//GEN-LAST:event_IngresarBtnMouseClicked
 

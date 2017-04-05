@@ -5,6 +5,7 @@
  */
 package Metodos;
 import Entidades.*;
+import Graficos.Interfaz_Login;
 /**
  *
  * @author Usuario
@@ -18,6 +19,7 @@ public class MetodosEntrenador  extends Entrenadores {
     public String InsertarInicio(String nombre,int id)
     {
         Entrenadores nuevo=new Entrenadores(nombre,id); // se crea el objeto entrenador
+        Interfaz_Login.metL.usuarioEntrenador(nuevo);//lo agrego a la lista de usuarios Entrenadores
         
         if (inicio==null)
         {
@@ -35,6 +37,7 @@ public class MetodosEntrenador  extends Entrenadores {
     public String InsertarFinal(String nombre,int id)
     {
          Entrenadores nuevo=new Entrenadores(nombre,id); // se crea el objeto entrenador
+         Interfaz_Login.metL.usuarioEntrenador(nuevo);//lo agrego a la lista de usuarios Entrenadores
          
         if (inicio==null)
         {
