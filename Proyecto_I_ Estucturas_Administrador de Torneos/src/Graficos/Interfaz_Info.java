@@ -12,20 +12,28 @@ import Entidades.Jugadores;
 import Entidades.Torneos;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
  * @author Usuario
  */
 public class Interfaz_Info extends javax.swing.JFrame {
+      
+    DefaultTableModel entrenadores; 
+    DefaultTableModel jugadores; 
+    DefaultTableModel equipos; 
+    DefaultTableModel torneo; 
+    DefaultTableModel enlace1; 
     
-    DefaultListModel <String> ListModel = new DefaultListModel <>();// esto es para poder usar la jlist1
 
     /**
      * Creates new form Interfaz_Info
      */
     public Interfaz_Info() {
         initComponents();
+ 
+        
         this.setLocationRelativeTo(null);
         this.setResizable(false);
     }
@@ -39,9 +47,7 @@ public class Interfaz_Info extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton1 = new javax.swing.JButton();
+        _Atras_ = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -53,15 +59,19 @@ public class Interfaz_Info extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         _Mostrar_Enlace1_ = new javax.swing.JButton();
         jLabel6 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jButton7 = new javax.swing.JButton();
+        _imprime_entrendor_de_equipo_ = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jScrollPane1.setViewportView(jList1);
-
-        jButton1.setText("Atras");
+        _Atras_.setText("Atras");
+        _Atras_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _Atras_ActionPerformed(evt);
+            }
+        });
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
@@ -77,7 +87,7 @@ public class Interfaz_Info extends javax.swing.JFrame {
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 153, 153));
-        jLabel4.setText("Ver Torneso");
+        jLabel4.setText("Ver Torneo");
 
         _Mostrar_Entrenadores_.setText("Mostrar");
         _Mostrar_Entrenadores_.addActionListener(new java.awt.event.ActionListener() {
@@ -122,65 +132,74 @@ public class Interfaz_Info extends javax.swing.JFrame {
         jLabel6.setForeground(new java.awt.Color(0, 102, 102));
         jLabel6.setText("Ver la Informacion que puede crear el Administrador");
 
-        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 10)); // NOI18N
-        jLabel7.setForeground(new java.awt.Color(204, 0, 0));
-        jLabel7.setText("jLabel7");
-
         jLabel8.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 153, 153));
         jLabel8.setText("Ver Enlaces Entrenador a Equipo ");
 
-        jButton7.setText("Mostrar");
+        _imprime_entrendor_de_equipo_.setText("Mostrar");
+        _imprime_entrendor_de_equipo_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                _imprime_entrendor_de_equipo_ActionPerformed(evt);
+            }
+        });
+
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(35, 35, 35)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jButton1)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(jLabel1)
-                                            .addComponent(jLabel2)
-                                            .addComponent(jLabel3)
-                                            .addComponent(jLabel4)
-                                            .addComponent(jLabel5))
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(_Mostrar_Enlace1_)
-                                            .addComponent(_Mostrar_Torneo_)
-                                            .addComponent(_Mostrar_Jugadores_)
-                                            .addComponent(_Mostrar_Equipos_)
-                                            .addComponent(_Mostrar_Entrenadores_)))
-                                    .addGroup(layout.createSequentialGroup()
-                                        .addComponent(jLabel8)
-                                        .addGap(45, 45, 45)
-                                        .addComponent(jButton7)))
-                                .addGap(42, 42, 42)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel7)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 390, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(26, 26, 26)
-                        .addComponent(jLabel6)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addComponent(jLabel6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(_Atras_))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(35, 35, 35)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel1)
+                                    .addComponent(jLabel2)
+                                    .addComponent(jLabel3)
+                                    .addComponent(jLabel4)
+                                    .addComponent(jLabel5))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_Mostrar_Enlace1_)
+                                    .addComponent(_Mostrar_Torneo_)
+                                    .addComponent(_Mostrar_Jugadores_)
+                                    .addComponent(_Mostrar_Equipos_)
+                                    .addComponent(_Mostrar_Entrenadores_)))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jLabel8)
+                                .addGap(45, 45, 45)
+                                .addComponent(_imprime_entrendor_de_equipo_)))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(14, 14, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                .addGap(22, 22, 22)
-                .addComponent(jLabel6)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton1)
-                .addGap(4, 4, 4)
-                .addComponent(jLabel7)
-                .addGap(18, 18, 18)
+                .addGap(19, 19, 19)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6)
+                    .addComponent(_Atras_))
+                .addGap(34, 34, 34)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -205,43 +224,59 @@ public class Interfaz_Info extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel8)
-                            .addComponent(jButton7)))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(_imprime_entrendor_de_equipo_))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 302, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 29, Short.MAX_VALUE))))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void _Mostrar_Entrenadores_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Mostrar_Entrenadores_ActionPerformed
-        jLabel7.setText("Informacion de Entrenadores");
+
         imprimirEntrenadores();
     }//GEN-LAST:event__Mostrar_Entrenadores_ActionPerformed
 
     private void _Mostrar_Equipos_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Mostrar_Equipos_ActionPerformed
-       jLabel7.setText("Informacion de Equipos");
+
        imprimirEquipos();
     }//GEN-LAST:event__Mostrar_Equipos_ActionPerformed
 
     private void _Mostrar_Jugadores_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Mostrar_Jugadores_ActionPerformed
-        jLabel7.setText("Informacion de Jugadores");
+
         imprimirJugadores();
     }//GEN-LAST:event__Mostrar_Jugadores_ActionPerformed
 
     private void _Mostrar_Torneo_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Mostrar_Torneo_ActionPerformed
-        jLabel7.setText("Informacion de Torneo");
-        imprimirTorneo();                         
+
+      imprimirTorneo();                         
     }//GEN-LAST:event__Mostrar_Torneo_ActionPerformed
 
     private void _Mostrar_Enlace1_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Mostrar_Enlace1_ActionPerformed
-        jLabel7.setText("Informacion de enlace Equipo/Torneo");
+
         imprimirEnlace1(); 
     }//GEN-LAST:event__Mostrar_Enlace1_ActionPerformed
+
+    private void _Atras_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Atras_ActionPerformed
+        Interfaz_Login.principal.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event__Atras_ActionPerformed
+
+    private void _imprime_entrendor_de_equipo_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__imprime_entrendor_de_equipo_ActionPerformed
+        imprimirEquiposEntrenador();
+    }//GEN-LAST:event__imprime_entrendor_de_equipo_ActionPerformed
 
     
    public void imprimirEnlace1()  
     {
-        ListModel.clear();
+        //Tabla para Torneo
+        String titulo1[]={"Torneo","Equipo"};
+        String datos1[][]={};
+        enlace1=new DefaultTableModel(datos1,titulo1);
+        jTable1.setModel(enlace1);
+        
         if (Interfaz_Login.metE.inicio==null)
         {
             JOptionPane.showMessageDialog(null, "Lista Vacia");
@@ -250,9 +285,12 @@ public class Interfaz_Info extends javax.swing.JFrame {
         else
         {          
             Torneos torneo = Interfaz_Login.metT.inicio;    // entro a los Torneo
+            Equipos equipo = Interfaz_Login.metE.inicio;
+            
+            if (torneo != null   ||  equipo != null)
+            {
             while(  torneo != null)
             { 
-              Equipos equipo = Interfaz_Login.metE.inicio;
               if(equipo==null)
               {
                 JOptionPane.showMessageDialog(null,"Lista de equipos esta vacia");
@@ -268,7 +306,9 @@ public class Interfaz_Info extends javax.swing.JFrame {
                     {
                         if(enlace.sigTorneo==torneo)
                         {
-                            ListModel.addElement("Torneo: "+torneo.nombre +"  se enlazo con "+"Equipo:  "+equipo.nombre);
+                            //Tabal Enlace1
+                            Object datos[]={torneo.nombre ,equipo.nombre};
+                            enlace1.addRow(datos);
                             break;
                         }
 
@@ -277,35 +317,55 @@ public class Interfaz_Info extends javax.swing.JFrame {
                 }
                 if(Interfaz_Login.metE.fin.sigSub.sigTorneo==torneo)
                 {
-                    ListModel.addElement("Torneo: "+torneo.nombre +"   se enlazo con   "+"Equipo:  "+equipo.nombre);
+                    //Tabal Enlace1
+                    Object datos[]={torneo.nombre ,equipo.nombre};
+                    enlace1.addRow(datos);
                     break;
                 }
                 
               }
               torneo=torneo.sig;
             }
-            jList1.setModel(ListModel); 
+            }
+            else
+            {
+                JOptionPane.showMessageDialog(null,"No hay enlaces");
+            }
+          
         }
     } 
     
     public void imprimirTorneo(){
-        
+        //Tabla para Torneo
+        String titulo1[]={"Nombre"};
+        String datos1[][]={};
+        torneo=new DefaultTableModel(datos1,titulo1);
+        jTable1.setModel(torneo);
+ 
         Torneos temp =Interfaz_Login.metT.inicio;
-        ListModel.clear();
         while(temp != null)
         {
-        ListModel.addElement("Nombre:  "+temp.nombre);// muestra en ListModel el nombre y la edad del Cliente
+        //Tabal Entrenadores
+        Object datos[]={temp.nombre};
+        torneo.addRow(datos);
+          
         temp=temp.sig;
-        }
-        jList1.setModel(ListModel);    
+        } 
     }
     
     public void imprimirEntrenadores()
     {
-        ListModel.clear();
+        //Tabla para Entrenadores
+        String titulo1[]={"Nombre","Identificacion"};
+        String datos1[][]={};
+        entrenadores=new DefaultTableModel(datos1,titulo1);
+        jTable1.setModel(entrenadores);
+        
         if (Interfaz_Login.metEn.inicio==Interfaz_Login.metEn.inicio.sig)
         {
-          ListModel.addElement("Nombre: "+Interfaz_Login.metEn.inicio.getNombre() +"  Identificacion: "+ Interfaz_Login.metEn.inicio.getId());// muestra en ListModel el nombre y la edad del Cliente
+          //Tabal Entrenadores
+          Object datos[]={Interfaz_Login.metEn.inicio.getNombre(),Interfaz_Login.metEn.inicio.getId()};
+          entrenadores.addRow(datos);
         }
         else
         {
@@ -313,21 +373,33 @@ public class Interfaz_Info extends javax.swing.JFrame {
             Entrenadores  aux = Interfaz_Login.metEn.inicio;
             while(aux.sig != temp)
             {
-                ListModel.addElement("Nombre: "+aux.getNombre() +"  Identificacion:  "+ aux.getId());// muestra en ListModel el nombre y la edad del Cliente
+                //Tabal Entrenadores
+                Object datos[]={aux.getNombre(),aux.getId()};
+                entrenadores.addRow(datos);
+                
                 aux=aux.sig;
             }
-            ListModel.addElement("Nombre: "+aux.getNombre()+"  Identificacon:  "+ aux.getId());
+            //Tabal Entrenadores
+            Object datos[]={aux.getNombre(),aux.getId()};
+            entrenadores.addRow(datos);
         }
-        jList1.setModel(ListModel);
         
     }
     
      public void imprimirEquipos()
     {
-        ListModel.clear();
+               
+        //Tabla para Equipos
+        String titulo3[]={"Nombre","Codigo"};
+        String datos3[][]={};
+        equipos=new DefaultTableModel(datos3,titulo3);
+        jTable1.setModel(equipos);
+        
         if (Interfaz_Login.metE.inicio==Interfaz_Login.metE.inicio.sig)
         {
-          ListModel.addElement("Nombre:  "+ Interfaz_Login.metE.inicio.nombre +"  Codigo:   "+ Interfaz_Login.metE.inicio.codigo);// muestra en ListModel el nombre y la edad del Cliente
+          //Tabla para Equipos
+          Object datos[]={Interfaz_Login.metE.inicio.nombre,Interfaz_Login.metE.inicio.codigo};
+          equipos.addRow(datos);
         }
         else
         {
@@ -335,26 +407,71 @@ public class Interfaz_Info extends javax.swing.JFrame {
             Equipos aux = Interfaz_Login.metE.inicio;
             while(aux.sig != temp)
             {
-                ListModel.addElement("Nombre: "+aux.nombre +"  Codigo:  "+ aux.codigo);// muestra en ListModel el nombre y la edad del Cliente
+                //Tabla para Equipos
+                Object datos[]={aux.nombre,aux.codigo};
+                equipos.addRow(datos);
+                
                 aux=aux.sig;
             }
-            ListModel.addElement("Nombre: "+aux.nombre +"  Codigo:  "+ aux.codigo);
+            //Tabla para Equipos
+            Object datos[]={aux.nombre,aux.codigo};
+            equipos.addRow(datos);
         }
-        jList1.setModel(ListModel);    
     }
      
     public void imprimirJugadores(){
         
+         
+        //Tabla para Jugadores
+        String titulo2[]={"Nombre","Cedula","Posicion","Valor"};
+        String datos2[][]={};
+        jugadores=new DefaultTableModel(datos2,titulo2);
+        jTable1.setModel(jugadores);
+        
         Jugadores temp = Interfaz_Login.metJ.inicio;
-        ListModel.clear();
         while(temp != null)
         {
-        ListModel.addElement("  Nombre :"+ temp.getNombre()+" Cedula: "+temp.getCedula() +"  Posicion:  "+ temp.getPosicion()+"   Valor: "+temp.getValor()+"$");// muestra en ListModel el nombre y la edad del Cliente
+        //Tabla de Jugadores
+        Object datos[]={temp.getNombre(),temp.getCedula(),temp.getPosicion(),temp.getValor()+" $"};
+        jugadores.addRow(datos);
+        
         temp=temp.sig;
-        }
-        jList1.setModel(ListModel);    
+        }  
     }
     
+    
+    public void imprimirEquiposEntrenador()
+    {
+               
+        //Tabla para Equipos
+        String titulo3[]={"Equipo","Entrenador"};
+        String datos3[][]={};
+        equipos=new DefaultTableModel(datos3,titulo3);
+        jTable1.setModel(equipos);
+        
+        if (Interfaz_Login.metE.inicio==Interfaz_Login.metE.inicio.sig)
+        {
+          //Tabla para Equipos
+          Object datos[]={Interfaz_Login.metE.inicio.nombre,Interfaz_Login.metE.inicio.nombreEntrenador};
+          equipos.addRow(datos);
+        }
+        else
+        {
+            Equipos temp = Interfaz_Login.metE.inicio;
+            Equipos aux = Interfaz_Login.metE.inicio;
+            while(aux.sig != temp)
+            {
+                //Tabla para Equipos
+                Object datos[]={aux.nombre,aux.nombreEntrenador};
+                equipos.addRow(datos);
+                
+                aux=aux.sig;
+            }
+            //Tabla para Equipos
+            Object datos[]={aux.nombre,aux.nombreEntrenador};
+            equipos.addRow(datos);
+        }
+    }
     /**
      * @param args the command line arguments
      */
@@ -391,22 +508,21 @@ public class Interfaz_Info extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton _Atras_;
     private javax.swing.JButton _Mostrar_Enlace1_;
     private javax.swing.JButton _Mostrar_Entrenadores_;
     private javax.swing.JButton _Mostrar_Equipos_;
     private javax.swing.JButton _Mostrar_Jugadores_;
     private javax.swing.JButton _Mostrar_Torneo_;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton7;
+    private javax.swing.JButton _imprime_entrendor_de_equipo_;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JList<String> jList1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }

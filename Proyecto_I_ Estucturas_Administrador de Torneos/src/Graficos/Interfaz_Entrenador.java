@@ -8,12 +8,14 @@ import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
 import Entidades.*;
 import Metodos.*;
+import javax.swing.table.DefaultTableModel;
 /**
  *
  * @author Usuario
  */
 public class Interfaz_Entrenador extends javax.swing.JFrame {
 
+    DefaultTableModel entrenadores;
     
     //MetodosEntrenador met =new MetodosEntrenador(); 
      
@@ -44,20 +46,12 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jSeparator3 = new javax.swing.JSeparator();
         jButton1_Insertar_Inicio_Un_Entrenador = new javax.swing.JButton();
-        jButton2_busca_Entrenador_ = new javax.swing.JButton();
         jLabel10 = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
         jButton5_Agrgar_Al_Final_Entrenador_ = new javax.swing.JButton();
-        jButton1_boton_impirmir_datos_ = new javax.swing.JButton();
         jButton1_atras_ = new javax.swing.JButton();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        jTable1 = new javax.swing.JTable();
 
         jMenuItem1.setText("jMenuItem1");
 
@@ -90,13 +84,11 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
 
         jLabel3.setText("Identificacion");
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel4.setForeground(new java.awt.Color(0, 102, 102));
-        jLabel4.setText("Buscar Entrenador");
-
-        jLabel5.setText("Nombre ");
-
-        jLabel6.setText("Identificacion");
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
 
         jButton1_Insertar_Inicio_Un_Entrenador.setText("Agregar Inicio");
         jButton1_Insertar_Inicio_Un_Entrenador.addActionListener(new java.awt.event.ActionListener() {
@@ -105,30 +97,14 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
             }
         });
 
-        jButton2_busca_Entrenador_.setText("Buscar");
-        jButton2_busca_Entrenador_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2_busca_Entrenador_ActionPerformed(evt);
-            }
-        });
-
         jLabel10.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel10.setForeground(new java.awt.Color(0, 102, 102));
         jLabel10.setText("Mostrar");
-
-        jScrollPane1.setViewportView(jList1);
 
         jButton5_Agrgar_Al_Final_Entrenador_.setText("Agregar Final");
         jButton5_Agrgar_Al_Final_Entrenador_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5_Agrgar_Al_Final_Entrenador_ActionPerformed(evt);
-            }
-        });
-
-        jButton1_boton_impirmir_datos_.setText("Mostrar");
-        jButton1_boton_impirmir_datos_.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1_boton_impirmir_datos_ActionPerformed(evt);
             }
         });
 
@@ -139,6 +115,19 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
             }
         });
 
+        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane2.setViewportView(jTable1);
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -146,62 +135,38 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jButton1_boton_impirmir_datos_))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel1)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel3)
-                                        .addComponent(jLabel2))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jTextField1)
-                                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(jButton1_Insertar_Inicio_Un_Entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                        .addComponent(jButton5_Agrgar_Al_Final_Entrenador_, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                .addGroup(layout.createSequentialGroup()
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel6)
-                                        .addComponent(jLabel5))
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGroup(layout.createSequentialGroup()
-                                            .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jButton2_busca_Entrenador_, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jSeparator3)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                                .addComponent(jLabel10)
-                                .addGap(126, 126, 126)
-                                .addComponent(jButton1_atras_))
-                            .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 333, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel2))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jTextField1)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(jButton5_Agrgar_Al_Final_Entrenador_, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jButton1_Insertar_Inicio_Un_Entrenador, javax.swing.GroupLayout.DEFAULT_SIZE, 116, Short.MAX_VALUE))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel10)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton1_atras_))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(16, 16, 16)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
+                        .addGap(16, 16, 16)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel10)
-                            .addComponent(jButton1_atras_))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 44, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 16, Short.MAX_VALUE))
-                    .addGroup(layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel1)
+                            .addComponent(jLabel10))
+                        .addGap(42, 42, 42)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(6, 6, 6)
@@ -209,47 +174,24 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
                             .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                                 .addComponent(jButton1_Insertar_Inicio_Un_Entrenador)
                                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(5, 5, 5)
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel3)
-                                    .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jButton5_Agrgar_Al_Final_Entrenador_))
-                        .addGap(28, 28, 28)
-                        .addComponent(jSeparator3, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
+                        .addGap(22, 22, 22)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel5)
-                            .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel6)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 20, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jButton2_busca_Entrenador_)))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
-                .addComponent(jButton1_boton_impirmir_datos_)
-                .addGap(17, 17, 17))
+                            .addComponent(jLabel3)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jButton5_Agrgar_Al_Final_Entrenador_)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addComponent(jButton1_atras_)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 335, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         getAccessibleContext().setAccessibleName(" Entrenador");
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    //aqui estoy quemand datos del entrenador
-    //String nuevo1=Interfaz_MenuPrincipal.metEn.InsertarInicio("Jorge Luis Pinto ",203040);
-    //String nuevo2=Interfaz_MenuPrincipal.metEn.InsertarInicio("Andrey Amdor ",213344);
-    //String nuevo3=Interfaz_MenuPrincipal.metEn.InsertarInicio("Oscar Ramirez ",223444);
-    //String nuevo4=Interfaz_MenuPrincipal.metEn.InsertarInicio("Bob Marley",233444);
-    //String nuevo5=Interfaz_MenuPrincipal.metEn.InsertarInicio("Rammstein",243444);
-    //String nuevo6=Interfaz_MenuPrincipal.metEn.InsertarInicio("Skiller ",253444);
-    //String nuevo7=Interfaz_MenuPrincipal.metEn.InsertarInicio("Red Hot Chili Peppers ",233444);
-    
+  
     private void jButton1_Insertar_Inicio_Un_EntrenadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Insertar_Inicio_Un_EntrenadorActionPerformed
         
         try
@@ -264,6 +206,7 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
           
             
             JOptionPane.showMessageDialog(null, insertado); 
+            imprimir();
 
             //
             jTextField1.setText("");
@@ -282,10 +225,17 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
 
     public void imprimir()
     {
-        ListModel.clear();
+        //Tabla para Entrenadores
+        String titulo1[]={"Nombre","Identificacion"};
+        String datos1[][]={};
+        entrenadores=new DefaultTableModel(datos1,titulo1);
+        jTable1.setModel(entrenadores);
+        
         if (Interfaz_Login.metEn.inicio==Interfaz_Login.metEn.inicio.sig)
         {
-          ListModel.addElement("Nombre: "+Interfaz_Login.metEn.inicio.getNombre() +"  Identificacion: "+ Interfaz_Login.metEn.inicio.getId());// muestra en ListModel el nombre y la edad del Cliente
+          //Tabal Entrenadores
+          Object datos[]={Interfaz_Login.metEn.inicio.getNombre(),Interfaz_Login.metEn.inicio.getId()};
+          entrenadores.addRow(datos);
         }
         else
         {
@@ -293,12 +243,15 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
             Entrenadores  aux = Interfaz_Login.metEn.inicio;
             while(aux.sig != temp)
             {
-                ListModel.addElement("Nombre: "+aux.getNombre() +"  Identificacion:  "+ aux.getId());// muestra en ListModel el nombre y la edad del Cliente
+                //Tabal Entrenadores
+                Object datos[]={aux.getNombre(),aux.getId()};
+                entrenadores.addRow(datos);
                 aux=aux.sig;
             }
-            ListModel.addElement("Nombre: "+aux.getNombre()+"  Identificacon:  "+ aux.getId());
+            //Tabal Entrenadores
+            Object datos[]={aux.getNombre(),aux.getId()};
+            entrenadores.addRow(datos);
         }
-        jList1.setModel(ListModel);
         
     }
     
@@ -316,6 +269,7 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
             {
                 String insertado=Interfaz_Login.metEn.InsertarFinal(nombre,identificacion);
                 JOptionPane.showMessageDialog(null, insertado);
+                imprimir();
                 //
                 jTextField1.setText("");
                 jTextField2.setText("");
@@ -331,37 +285,14 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButton5_Agrgar_Al_Final_Entrenador_ActionPerformed
 
-    private void jButton2_busca_Entrenador_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2_busca_Entrenador_ActionPerformed
-       try
-        {
-            String nombre= jTextField3.getText();
-            int    id  = Integer.parseInt( jTextField4.getText());
-
-            boolean insertado=Interfaz_Login.metEn.buscarEntrenador(nombre, id);
-            if (insertado==true)
-            {
-                JOptionPane.showMessageDialog(null, "Fue encontrado");
-            }
-            else
-            {
-            JOptionPane.showMessageDialog(null, "No fue encontrado");
-            }
-        }
-        catch (Exception e) 
-        {
-            JOptionPane.showMessageDialog(null, "Error al Ingresar los Datos");
-        }
-    }//GEN-LAST:event_jButton2_busca_Entrenador_ActionPerformed
-
-    private void jButton1_boton_impirmir_datos_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_boton_impirmir_datos_ActionPerformed
-        
-        imprimir();
-    }//GEN-LAST:event_jButton1_boton_impirmir_datos_ActionPerformed
-
     private void jButton1_atras_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_atras_ActionPerformed
       Interfaz_Login.principal.setVisible(true);
       this.dispose();  
     }//GEN-LAST:event_jButton1_atras_ActionPerformed
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
    
     
     
@@ -404,17 +335,11 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1_Insertar_Inicio_Un_Entrenador;
     private javax.swing.JButton jButton1_atras_;
-    private javax.swing.JButton jButton1_boton_impirmir_datos_;
-    private javax.swing.JButton jButton2_busca_Entrenador_;
     private javax.swing.JButton jButton5_Agrgar_Al_Final_Entrenador_;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JMenu jMenu3;
     private javax.swing.JMenu jMenu4;
     private javax.swing.JMenu jMenu6;
@@ -424,11 +349,9 @@ public class Interfaz_Entrenador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JSeparator jSeparator3;
+    private javax.swing.JScrollPane jScrollPane2;
+    private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
     // End of variables declaration//GEN-END:variables
 }

@@ -5,6 +5,7 @@
  */
 package Metodos;
 import Entidades.*;
+import Graficos.Interfaz_Login;
 import Graficos.Interfaz_MenuPrincipal;
 
 /**
@@ -13,11 +14,14 @@ import Graficos.Interfaz_MenuPrincipal;
  */
 public class Metodos_Enlace_Torneo_Equipo {
    
-    public String insertarInicioEnlaceTorneoEquipo(String nombreTorneo,String nombreEquipo,Equipos equipo,Torneos torneo)
+    public String insertarInicioEnlaceTorneoEquipo(String nombreTorneo,String nombreEquipo)
     {
 
-        Torneos Torneo=torneo;
-        Equipos Equipo=equipo;
+        Torneos veri1=Interfaz_Login.enlaces.VerificaTorneo(nombreTorneo);
+        Equipos veri2=Interfaz_Login.enlaces.VerificaEquipo(nombreEquipo);
+        
+        Torneos Torneo=veri1;
+        Equipos Equipo=veri2;
         
         if(Torneo != null)
         {

@@ -15,20 +15,30 @@ public class Equipos {
     // esto es una lista circular doble
     public String nombre;
     public int    codigo; 
-    public ImageIcon imagenCasa;
-    public ImageIcon imagenVisita;
+    public String nombreEntrenador;
+    
+    
+    
     
     public Equipos sig,ant; 
     public Enlace_Torneo_Equipos sigSub; // es para vincular este equipo al torneo
+    public Enlace_Jugador_Equipo sigSub1;
     
-    public Equipos(String nombre,int codigo,ImageIcon ImagenCasa,ImageIcon ImagenVisita)
+    public Equipos(String nombre,int codigo)
     {
         this.nombre=nombre;
         this.codigo=codigo;
-        this.imagenCasa=ImagenCasa;
-        this.imagenVisita=ImagenVisita;
         sig=ant=null;
     }
+
+    public String getNombreEntrenador() {
+        return nombreEntrenador;
+    }
+
+    public void setNombreEntrenador(String nombreEntrenador) {
+        this.nombreEntrenador = nombreEntrenador;
+    }
+    
     
     
     

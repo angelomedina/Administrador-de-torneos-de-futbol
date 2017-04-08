@@ -31,41 +31,62 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jButton1_Salir_ = new javax.swing.JButton();
+        _atras_ = new javax.swing.JButton();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jButton1_Salir_.setText("Salir");
-        jButton1_Salir_.addActionListener(new java.awt.event.ActionListener() {
+        _atras_.setText("Salir");
+        _atras_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1_Salir_ActionPerformed(evt);
+                _atras_ActionPerformed(evt);
             }
         });
+
+        jMenu1.setText("Enlazar");
+        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenu1MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Edit");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+            .addGroup(layout.createSequentialGroup()
                 .addContainerGap(555, Short.MAX_VALUE)
-                .addComponent(jButton1_Salir_)
+                .addComponent(_atras_)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jButton1_Salir_)
-                .addContainerGap(324, Short.MAX_VALUE))
+                .addComponent(_atras_)
+                .addContainerGap(303, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1_Salir_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1_Salir_ActionPerformed
+    private void _atras_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__atras_ActionPerformed
         new Interfaz_Login(new MetodosLogin()).setVisible(true);
         this.dispose();
-    }//GEN-LAST:event_jButton1_Salir_ActionPerformed
+    }//GEN-LAST:event__atras_ActionPerformed
+
+    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+        Interfaz_Login.enlaceJE .setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenu1MouseClicked
 
     /**
      * @param args the command line arguments
@@ -104,6 +125,9 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1_Salir_;
+    private javax.swing.JButton _atras_;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     // End of variables declaration//GEN-END:variables
 }

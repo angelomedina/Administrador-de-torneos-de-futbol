@@ -117,6 +117,25 @@ public class MetodosJugadores {
     }
     
     
+     public Jugadores buscarSimple(String nombre)
+    {
+        if (inicio==null) // pregunta si esta vacio
+        {
+            return null;
+        }
+        Jugadores aux=inicio; // INICIO ES DE TIPO CLIENTE POR ESO 
+        
+        while(aux !=null)
+        {
+            if (aux.getNombre().equals(nombre))// equals es solo para comparar string
+            {
+                return aux;           
+            }
+            aux =aux.sig;
+        }
+        return null;        
+    }
+    
 } 
      
     

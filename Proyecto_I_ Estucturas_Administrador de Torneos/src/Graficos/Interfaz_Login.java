@@ -6,6 +6,8 @@
 package Graficos;
 
 import Entidades.Entrenadores;
+import Entidades.Equipos;
+import Entidades.Torneos;
 import Metodos.*;
 import javax.swing.JOptionPane;
 
@@ -26,6 +28,8 @@ public class Interfaz_Login extends javax.swing.JFrame {
     public static Interfaz_Enlaces               enlaces   =  new Interfaz_Enlaces();
     public static Interfaz_Estadio               estadio   =  new Interfaz_Estadio();
     public static Interfaz_Usuario_Entrenador      userEntrenador  =  new Interfaz_Usuario_Entrenador();
+    public static Interfaz_Usuario_Entrenador_Enlazar_JE      enlaceJE  =  new Interfaz_Usuario_Entrenador_Enlazar_JE();
+    
     
     //metodos
     public static Metodos_Enlace_Torneo_Equipo     metET =  new Metodos_Enlace_Torneo_Equipo();
@@ -35,6 +39,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
     public static MetodosTorneo                    metT  =  new MetodosTorneo();
     public static Metodos_Enlace_Entrenador_Equipo metEnE  =  new Metodos_Enlace_Entrenador_Equipo();
     public static MetodosLogin                     metL  =  new MetodosLogin();
+    public static Metodos_Enlace_Equipo_Jugador    metJE =  new Metodos_Enlace_Equipo_Jugador();
     
     
     
@@ -126,13 +131,13 @@ public class Interfaz_Login extends javax.swing.JFrame {
 
     //QUEMA DE DATOS
     //Datos para entrenador
-    String Enuevo1=Interfaz_Login.metEn.InsertarInicio("Jorge Luis Pinto ",203040);
-    String Enuevo2=Interfaz_Login.metEn.InsertarInicio("Andrey Amdor ",213344);
-    String Enuevo3=Interfaz_Login.metEn.InsertarInicio("Oscar Ramirez ",223444);
-    String Enuevo4=Interfaz_Login.metEn.InsertarInicio("Bob Marley",233444);
+    String Enuevo1=Interfaz_Login.metEn.InsertarInicio("Pinto",203040);
+    String Enuevo2=Interfaz_Login.metEn.InsertarInicio("Andrey",213344);
+    String Enuevo3=Interfaz_Login.metEn.InsertarInicio("Oscar",223444);
+    String Enuevo4=Interfaz_Login.metEn.InsertarInicio("Bob",233444);
     String Enuevo5=Interfaz_Login.metEn.InsertarInicio("Rammstein",24);
-    String Enuevo6=Interfaz_Login.metEn.InsertarInicio("Skiller ",253444);
-    String Enuevo7=Interfaz_Login.metEn.InsertarInicio("Red Hot Chili Peppers ",233444);
+    String Enuevo6=Interfaz_Login.metEn.InsertarInicio("Skiller",253444);
+    String Enuevo7=Interfaz_Login.metEn.InsertarInicio("Red",233444);
     //Datos para jugadores
     String Jnuevo1=Interfaz_Login.metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
     String Jnuevo2=Interfaz_Login.metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
@@ -146,14 +151,17 @@ public class Interfaz_Login extends javax.swing.JFrame {
     String Jnuevo10=Interfaz_Login.metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
     String Jnuevo11=Interfaz_Login.metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
     //Datos para equipos
-    String EQnuevo1=Interfaz_Login.metE.InsertarInicio("Costa Rica", 0, null, null);
-    String EQnuevo2=Interfaz_Login.metE.InsertarInicio("Estados Unidos", 1, null, null);
-    String EQnuevo3=Interfaz_Login.metE.InsertarInicio("Honduras", 2, null, null);
-    String EQnuevo4=Interfaz_Login.metE.InsertarInicio("Mexico", 3, null, null);
+    String EQnuevo1=Interfaz_Login.metE.InsertarInicio("Costa Rica", 0);
+    String EQnuevo2=Interfaz_Login.metE.InsertarInicio("Estados Unidos", 1);
+    String EQnuevo3=Interfaz_Login.metE.InsertarInicio("Honduras", 2);
+    String EQnuevo4=Interfaz_Login.metE.InsertarInicio("Mexico", 3);
     //Datos para torneo
     String Tnuevo1=Interfaz_Login.metT.insertarInicio("Mundial 2014");
     //Datos de enlace equipo/torneo
-    //String Ennuevo1=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014",Interfaz_Login.metT.insertarInicio("Mundial 2014"),Tnuevo1,Interfaz_Login.metE.InsertarInicio("Costa Rica", 0, null, null));
+    String ENnuevo1=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Costa Rica");
+    String ENnuevo2=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Estados Unidos");
+    String ENnuevo3=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Honduras");
+    String ENnuevo4=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Mexico");
     
     private void IngresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarBtnMouseClicked
         // TODO add your handling code here:

@@ -16,9 +16,9 @@ public class MetodosEquipos {
     public Equipos inicio;
     public Equipos fin;
     
-    public String InsertarInicio(String nombre,int codigo,ImageIcon ImagenCasa,ImageIcon ImagenVisita)
+    public String InsertarInicio(String nombre,int codigo)
     {
-        Equipos nuevo=new Equipos(nombre,codigo, ImagenCasa,ImagenVisita);
+        Equipos nuevo=new Equipos(nombre,codigo);
         
         if(inicio==null)
         {             
@@ -35,9 +35,9 @@ public class MetodosEquipos {
         return "Insertado";
     }
     
-    public String InsertarFinal(String nombre,int codigo,ImageIcon ImagenCasa,ImageIcon ImagenVisita)
+    public String InsertarFinal(String nombre,int codigo)
     {
-        Equipos nuevo=new Equipos(nombre,codigo,ImagenCasa,ImagenVisita);
+        Equipos nuevo=new Equipos(nombre,codigo);
         if(inicio==null)
         {
           fin=inicio=nuevo;
@@ -77,6 +77,32 @@ public class MetodosEquipos {
           aux=aux.sig;
         }
         return false;    
+    }
+     
+    public Equipos buscarEquipo(String nombre)
+    {
+        if (inicio==null)
+        {
+            return null;
+        }
+        if (inicio.nombre.equals(nombre))
+        {
+            return inicio;
+        }
+        
+        Equipos aux=inicio;
+        Equipos  ant=inicio;
+        Equipos  temp=inicio;
+        while ( temp != aux.sig)
+        {
+          if (aux.nombre.equals(nombre))  
+          {
+            return aux;      
+          }
+          ant=aux;
+          aux=aux.sig;
+        }
+        return null;    
     }
     
 }

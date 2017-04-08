@@ -52,35 +52,6 @@ public class MetodosEntrenador  extends Entrenadores {
         return "Agregado";
     }
     
-    public boolean buscarEntrenador(String nombre ,int id)
-    {
-        Entrenadores temp = inicio;
-        Entrenadores  aux = inicio;
-        if (inicio==null)
-         {
-             return false;
-         }
-        if (inicio.getNombre().equals(nombre) && inicio.getId()==id)
-        {
-          return true;
-        }
-        else
-        {
-            while(aux.sig != temp)
-            {
-                if (aux.getNombre().equals(nombre) && aux.getId()==id)
-                {
-                    return true;
-                }    
-                aux=aux.sig;
-            }
-            if (aux.getNombre().equals(nombre) && aux.getId()==id)
-            {
-                    return true;
-            }
-            return false;   
-        }  
-    }
    
     public boolean verificaID(int id) 
     {
@@ -110,6 +81,38 @@ public class MetodosEntrenador  extends Entrenadores {
         return false;
     }
    
+    
+    
+    public Entrenadores Buscar(String nombre)
+    {
+        if (inicio==null)
+        {
+            return null;
+        }
+        
+        Entrenadores  aux=inicio;
+        Entrenadores   temp=fin;
+        
+        while ( aux != temp)
+        {
+          if (aux.getNombre().equals(nombre) )
+          {
+            return aux;      
+          }
+          aux=aux.sig;
+        }
+        if(temp.getNombre().equals(nombre))
+        {
+            return temp;
+        }
+        else
+        {
+        return null;    
+        }
+    }
+    
+    
+    
    
    // metodos 
    public void comprar(){};
