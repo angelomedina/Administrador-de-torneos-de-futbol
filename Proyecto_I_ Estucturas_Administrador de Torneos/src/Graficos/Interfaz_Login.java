@@ -16,7 +16,9 @@ import javax.swing.JOptionPane;
  * @author Admi
  */
 public class Interfaz_Login extends javax.swing.JFrame {
-
+  
+    
+    
     
     //interfaces
     public static Interfaz_Info                  info  = new Interfaz_Info();
@@ -29,6 +31,8 @@ public class Interfaz_Login extends javax.swing.JFrame {
     public static Interfaz_Estadio               estadio   =  new Interfaz_Estadio();
     public static Interfaz_Usuario_Entrenador      userEntrenador  =  new Interfaz_Usuario_Entrenador();
     public static Interfaz_Usuario_Entrenador_Enlazar_JE      enlaceJE  =  new Interfaz_Usuario_Entrenador_Enlazar_JE();
+    public static Interfaz_Info_para_entrenador     info2  =  new Interfaz_Info_para_entrenador();
+    
     
     
     //metodos
@@ -131,13 +135,13 @@ public class Interfaz_Login extends javax.swing.JFrame {
 
     //QUEMA DE DATOS
     //Datos para entrenador
-    String Enuevo1=Interfaz_Login.metEn.InsertarInicio("Pinto",203040);
-    String Enuevo2=Interfaz_Login.metEn.InsertarInicio("Andrey",213344);
-    String Enuevo3=Interfaz_Login.metEn.InsertarInicio("Oscar",223444);
-    String Enuevo4=Interfaz_Login.metEn.InsertarInicio("Bob",233444);
+    String Enuevo1=Interfaz_Login.metEn.InsertarInicio("Pinto",20);
+    String Enuevo2=Interfaz_Login.metEn.InsertarInicio("Andrey",21);
+    String Enuevo3=Interfaz_Login.metEn.InsertarInicio("Oscar",22);
+    String Enuevo4=Interfaz_Login.metEn.InsertarInicio("Bob",23);
     String Enuevo5=Interfaz_Login.metEn.InsertarInicio("Rammstein",24);
-    String Enuevo6=Interfaz_Login.metEn.InsertarInicio("Skiller",253444);
-    String Enuevo7=Interfaz_Login.metEn.InsertarInicio("Red",233444);
+    String Enuevo6=Interfaz_Login.metEn.InsertarInicio("Skiller",25);
+    String Enuevo7=Interfaz_Login.metEn.InsertarInicio("Red",26);
     //Datos para jugadores
     String Jnuevo1=Interfaz_Login.metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
     String Jnuevo2=Interfaz_Login.metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
@@ -150,11 +154,26 @@ public class Interfaz_Login extends javax.swing.JFrame {
     String Jnuevo9=Interfaz_Login.metJ.InsertarInicio("Bolaños"   , 8,4,1,2,9,"Medio Campo");
     String Jnuevo10=Interfaz_Login.metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
     String Jnuevo11=Interfaz_Login.metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
+    String Jnuevo12=Interfaz_Login.metJ.InsertarFinal("Chicharito"   , 11,11,10,8,9,"Medio Campo");
+    String Jnuevo13=Interfaz_Login.metJ.InsertarInicio("Ochoa"   , 12,10,10,8,9,"Medio Campo");
     //Datos para equipos
     String EQnuevo1=Interfaz_Login.metE.InsertarInicio("Costa Rica", 0);
     String EQnuevo2=Interfaz_Login.metE.InsertarInicio("Estados Unidos", 1);
     String EQnuevo3=Interfaz_Login.metE.InsertarInicio("Honduras", 2);
     String EQnuevo4=Interfaz_Login.metE.InsertarInicio("Mexico", 3);
+    String EQnuevo5=Interfaz_Login.metE.InsertarInicio("Portugal", 4);
+    String EQnuevo6=Interfaz_Login.metE.InsertarInicio("Brasil", 5);
+    String EQnuevo7=Interfaz_Login.metE.InsertarInicio("Italia", 6);
+    String EQnuevo8=Interfaz_Login.metE.InsertarInicio("Inglatera", 7);
+    String EQnuevo9=Interfaz_Login.metE.InsertarInicio("Urugay", 8);
+    String EQnuevo10=Interfaz_Login.metE.InsertarInicio("Croacia", 9);
+    String EQnuevo11=Interfaz_Login.metE.InsertarInicio("Francia", 10);
+    String EQnuevo12=Interfaz_Login.metE.InsertarInicio("Nigeria", 11);
+    String EQnuevo13=Interfaz_Login.metE.InsertarInicio("Congo", 12);
+    String EQnuevo14=Interfaz_Login.metE.InsertarInicio("Grecia", 13);
+    String EQnuevo15=Interfaz_Login.metE.InsertarInicio("Peru", 14);
+    String EQnuevo16=Interfaz_Login.metE.InsertarInicio("Alemania", 15);
+    
     //Datos para torneo
     String Tnuevo1=Interfaz_Login.metT.insertarInicio("Mundial 2014");
     //Datos de enlace equipo/torneo
@@ -162,14 +181,30 @@ public class Interfaz_Login extends javax.swing.JFrame {
     String ENnuevo2=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Estados Unidos");
     String ENnuevo3=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Honduras");
     String ENnuevo4=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Mexico");
+    //Datos de enlace  equipo/entrenador
+    String ENLnuevo1=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Oscar","Costa Rica");
+    String ENLnuevo2=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Pinto","Honduras");
+    String ENLnuevo3=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Skiller","Mexico");
+    String ENLnuevo4=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Red","Estados Unidos");
+    //Datos de enlace jugadores/equipo
+    String JEnuevo1=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Keylor");
+    String JEnuevo2=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Campbell");
+    String JEnuevo3=Interfaz_Login.metJE.enlazarEquipoJugador("Mexico","Chicharito");
+    String JEnuevo4=Interfaz_Login.metJE.enlazarEquipoJugador("Mexico","Ochoa");
+    
     
     private void IngresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarBtnMouseClicked
+        
+        if( Interfaz_Login.info.jTable1  )
+        {
+            Interfaz_Login.info.refrescar();
+        }
+        
         // TODO add your handling code here:
         String nombreUsuario = nombreUsuarioTxt.getText();
         String contraseña = contraseñaTxt.getText();
         int contraEntrenadores=Integer.parseInt(contraseñaTxt.getText());
-       
-        
+               
         if (nombreUsuario.equals("Fifa") && contraseña.equals("123"))
         {
             this.dispose();
@@ -182,6 +217,11 @@ public class Interfaz_Login extends javax.swing.JFrame {
                 if(i.getNombre().equals(nombreUsuario) && i.getId()==contraEntrenadores)
                 {
                     bandera=1;
+                   
+                    //
+                    Interfaz_Login.userEntrenador.jLabe2.setText(i.getNombre());
+                    //
+                    
                     this.dispose();
                     new Interfaz_Usuario_Entrenador().setVisible(true);  
                 }

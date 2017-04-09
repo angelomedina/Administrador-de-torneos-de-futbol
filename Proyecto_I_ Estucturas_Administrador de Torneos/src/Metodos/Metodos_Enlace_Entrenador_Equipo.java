@@ -114,7 +114,7 @@ public class Metodos_Enlace_Entrenador_Equipo {
         {
           if (temp.nombreEntrenador != null)  
           {
-            if(Interfaz_Login.metE.inicio.nombreEntrenador.equals(nombre))
+            if(temp.nombreEntrenador.equals(nombre))
             {
                 return true;
             }     
@@ -128,7 +128,10 @@ public class Metodos_Enlace_Entrenador_Equipo {
                 return true;
 
             }
+            else
+            {
             return false;
+            }
         }
         return false;    
     }

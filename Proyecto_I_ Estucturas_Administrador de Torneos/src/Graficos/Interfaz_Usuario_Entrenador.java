@@ -32,9 +32,11 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
     private void initComponents() {
 
         _atras_ = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        jLabe2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        ver_toda_info_del_sistema_ = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -45,6 +47,10 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
             }
         });
 
+        jLabel1.setText("Bienvenido");
+
+        jLabe2.setText("jLabel2");
+
         jMenu1.setText("Enlazar");
         jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -53,8 +59,13 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
         });
         jMenuBar1.add(jMenu1);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        ver_toda_info_del_sistema_.setText("Ver Informacion");
+        ver_toda_info_del_sistema_.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ver_toda_info_del_sistema_MouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(ver_toda_info_del_sistema_);
 
         setJMenuBar(jMenuBar1);
 
@@ -63,7 +74,11 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap(555, Short.MAX_VALUE)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(18, 18, 18)
+                .addComponent(jLabe2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 441, Short.MAX_VALUE)
                 .addComponent(_atras_)
                 .addContainerGap())
         );
@@ -71,7 +86,11 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(_atras_)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jLabel1)
+                        .addComponent(jLabe2))
+                    .addComponent(_atras_))
                 .addContainerGap(303, Short.MAX_VALUE))
         );
 
@@ -87,6 +106,11 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
         Interfaz_Login.enlaceJE .setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenu1MouseClicked
+
+    private void ver_toda_info_del_sistema_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ver_toda_info_del_sistema_MouseClicked
+        Interfaz_Login.info2.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_ver_toda_info_del_sistema_MouseClicked
 
     /**
      * @param args the command line arguments
@@ -126,8 +150,10 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton _atras_;
+    public javax.swing.JLabel jLabe2;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu ver_toda_info_del_sistema_;
     // End of variables declaration//GEN-END:variables
 }

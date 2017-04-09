@@ -8,6 +8,7 @@ package Metodos;
 import Entidades.Enlace_Jugador_Equipo;
 import Entidades.Equipos;
 import Entidades.Jugadores;
+import Graficos.Interfaz_Login;
 
 /**
  *
@@ -15,8 +16,11 @@ import Entidades.Jugadores;
  */
 public class Metodos_Enlace_Equipo_Jugador {
     
-    public String enlazarEquipoJugador(String nombreEquipo,String nombreJugador,Equipos equipo,Jugadores jugador)
+    public String enlazarEquipoJugador(String nombreEquipo,String nombreJugador)
     {
+        Equipos equipo=Interfaz_Login.enlaces.VerificaEquipo(nombreEquipo);
+        Jugadores jugador=Interfaz_Login.metJ.buscarSimple(nombreJugador);
+        
         if(equipo != null && jugador != null)
         {
           Enlace_Jugador_Equipo sub=new Enlace_Jugador_Equipo();   
