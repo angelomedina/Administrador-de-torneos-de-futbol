@@ -15,12 +15,17 @@ public class Enlace_Jugador_Equipo {
     public Jugadores  sigJugador;
 
     //prueba
-    public static int cantidad=0;
+
     
     public Enlace_Jugador_Equipo() {
         this.sig = null;
         this.sigJugador =null;
     }
+
+  
+    
+    
+    
     
     
     

@@ -17,6 +17,16 @@ public class Equipos {
     public int    codigo; 
     public String nombreEntrenador;
     
+    public int cant;
+
+    public int getCant() {
+        return cant;
+    }
+
+    public void setCant(int cant) {
+        this.cant = cant;
+    }
+    
     
     
     
@@ -29,6 +39,9 @@ public class Equipos {
         this.nombre=nombre;
         this.codigo=codigo;
         sig=ant=null;
+        //
+        
+        
     }
 
     public String getNombreEntrenador() {

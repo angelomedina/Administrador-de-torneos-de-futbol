@@ -39,12 +39,12 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
         jTextField2 = new javax.swing.JTextField();
         _enlazar_Jugador_Entrenador_ = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
+        jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Usuario Entrenador Enlazar Jugador con Equipo");
@@ -53,7 +53,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
         jLabel1.setForeground(new java.awt.Color(0, 153, 153));
         jLabel1.setText("Enlazar Jugadores a Equipo");
 
-        jLabel2.setText("Nombre del Equipo");
+        jLabel2.setText("Nombre de mi  Equipo");
 
         jLabel3.setText("Nombre del Jugador");
 
@@ -84,6 +84,10 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
         ));
         jScrollPane2.setViewportView(jTable1);
 
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel4.setText("jLabel4");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -98,11 +102,12 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
                             .addComponent(jLabel2))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField2)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(_enlazar_Jugador_Entrenador_)
-                                .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jTextField1)
-                            .addComponent(jTextField2))))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(_enlazar_Jugador_Entrenador_)
+                                    .addComponent(jLabel4))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -121,10 +126,10 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
                         .addComponent(jButton2)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(23, 23, 23)
+                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
-                            .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jLabel4))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
@@ -149,12 +154,12 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
     private void _enlazar_Jugador_Entrenador_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__enlazar_Jugador_Entrenador_ActionPerformed
         try
         {
-            String nombreEquipo=jTextField1.getText();
+            String nombreEquipo=Interfaz_Login.userEntrenador.jLabel4.getText();
             String nombreJugador=jTextField2.getText();
      
             String insertado=Interfaz_Login.metJE.enlazarEquipoJugador(nombreEquipo, nombreJugador);
             JOptionPane.showMessageDialog(null,insertado);
-            Imprimir();
+            Imprimir(nombreEquipo);
             
             
         }
@@ -164,7 +169,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
         }
     }//GEN-LAST:event__enlazar_Jugador_Entrenador_ActionPerformed
 
-    public void Imprimir()
+    public void Imprimir(String nombreEquipo)
     {
         //Tabla para Equipos
         String titulo3[]={"Nombre","Jugador"};
@@ -172,7 +177,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
         equipos=new DefaultTableModel(datos3,titulo3);
         jTable1.setModel(equipos);
         
-        if (Interfaz_Login.metE.inicio==Interfaz_Login.metE.inicio.sig)
+        if (Interfaz_Login.metE.inicio==Interfaz_Login.metE.inicio.sig && Interfaz_Login.metE.inicio.nombre.equals(nombreEquipo) )
         {
           //Tabla para Equipos
           if(Interfaz_Login.metE.inicio.sigSub1 != null)
@@ -196,7 +201,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
             while(aux.sig != temp)
             {
                //Tabla para Equipos
-                if(aux.sigSub1 != null)
+                if(aux.sigSub1 != null && aux.nombre.equals(nombreEquipo))
                 {
                     Enlace_Jugador_Equipo  sub=aux.sigSub1;
                     while(sub != null) 
@@ -208,7 +213,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
                 }
                 aux=aux.sig;
             }
-            if(aux.sigSub1 != null)
+            if(aux.sigSub1 != null && aux.nombre.equals(nombreEquipo))
             {
                 Enlace_Jugador_Equipo  sub=aux.sigSub1;
                     while(sub != null) 
@@ -262,9 +267,9 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    public javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
-    private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     // End of variables declaration//GEN-END:variables
 }

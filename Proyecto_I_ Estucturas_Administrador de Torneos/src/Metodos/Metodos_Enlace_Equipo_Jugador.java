@@ -16,10 +16,13 @@ import Graficos.Interfaz_Login;
  */
 public class Metodos_Enlace_Equipo_Jugador {
     
+    int cont=1;
+    
     public String enlazarEquipoJugador(String nombreEquipo,String nombreJugador)
     {
         Equipos equipo=Interfaz_Login.enlaces.VerificaEquipo(nombreEquipo);
         Jugadores jugador=Interfaz_Login.metJ.buscarSimple(nombreJugador);
+        
         
         if(equipo != null && jugador != null)
         {
@@ -31,22 +34,28 @@ public class Metodos_Enlace_Equipo_Jugador {
            
                 equipo.sigSub1=sub;
                 //
-                sub.cantidad++; // sumo la cantidad de jugadores al equipo maximo 11
+                equipo.setCant(cont++);// sumo la cantidad de jugadores al equipo maximo 11
+                System.out.println(equipo.cant);
                 //
-                return "Enlazados";
-           
+                return "Enlazados";   
             
           }
-          if(sub.cantidad < 11  ) 
+          if(equipo.cant <= 10  ) 
           {
             sub.sig=equipo.sigSub1;
             equipo.sigSub1=sub;
             
-            //
-            sub.cantidad++; // sumo la cantidad de jugadores al equipo maximo 11
-            //
+           //
+           equipo.setCant(cont++);// sumo la cantidad de jugadores al equipo maximo 11
+           System.out.println(equipo.cant);
+           //
             return "Enlazados";
           }
+          if(cont==10)
+          {
+              cont=0;
+          }
+          
           else
           {
               return "El equipo ya tiene los 11 jugadores";

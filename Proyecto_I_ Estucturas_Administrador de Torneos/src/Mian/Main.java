@@ -84,7 +84,7 @@ public class Main {
     String ENLnuevo1=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Oscar","Costa Rica");
     String ENLnuevo2=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Pinto","Honduras");
     String ENLnuevo3=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("M.Herrera","Mexico");
-    String ENLnuevo4=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Red","Estados Unidos");
+    String ENLnuevo4=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Roy","Estados Unidos");
     //Datos de enlace jugadores/equipo
     String JEnuevo1=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Keylor");
     String JEnuevo2=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Campbell");

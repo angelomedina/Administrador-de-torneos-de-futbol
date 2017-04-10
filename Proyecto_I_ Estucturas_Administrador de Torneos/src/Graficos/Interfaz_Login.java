@@ -135,13 +135,13 @@ public class Interfaz_Login extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
 
-    public boolean verificaEntrenador_en_Equipo(String nombreEntrenador)
+    public Equipos verificaEntrenador_en_Equipo(String nombreEntrenador)
     {
         if (Interfaz_Login.metE.inicio==Interfaz_Login.metE.inicio.sig)
         {
             if(Interfaz_Login.metE.inicio.nombreEntrenador.equals(nombreEntrenador))
             {
-                return true;
+                return Interfaz_Login.metE.inicio;
             }
           
         }
@@ -153,17 +153,17 @@ public class Interfaz_Login extends javax.swing.JFrame {
             {
                 if(aux.nombreEntrenador != null  && aux.nombreEntrenador.equals(nombreEntrenador))
                 {
-                    return true;
+                    return aux;
                 }
                 aux=aux.sig;
             }
             if(aux.nombreEntrenador != null  && aux.nombreEntrenador.equals(nombreEntrenador))
             {
-                    return true;
+                    return aux;
             }
         }
         
-        return false;
+        return null;
     }
     
     
@@ -189,9 +189,9 @@ public class Interfaz_Login extends javax.swing.JFrame {
         }
         else
         {
-            boolean verifica=verificaEntrenador_en_Equipo(nombreUsuario);
+            Equipos verifica=verificaEntrenador_en_Equipo(nombreUsuario);
             
-            if(verifica==true)
+            if(verifica != null)
             {
                 int bandera=0;
                 for(Entrenadores i:Interfaz_Login.metL.entrenadores){
@@ -201,6 +201,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
 
                         //
                         Interfaz_Login.userEntrenador.jLabel2.setText(nombreUsuario );
+                        Interfaz_Login.userEntrenador.jLabel4.setText(verifica.nombre );
                         //
                         Interfaz_Login.userEntrenador.setVisible(true);
                         this.dispose();
