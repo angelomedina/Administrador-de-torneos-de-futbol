@@ -13,6 +13,8 @@ public class Enlace_Entrenador_Equipos {
     
     public Enlace_Entrenador_Equipos sig;
     public Equipos   sigEquipo;
+    
+    
 
     public Enlace_Entrenador_Equipos()
     {

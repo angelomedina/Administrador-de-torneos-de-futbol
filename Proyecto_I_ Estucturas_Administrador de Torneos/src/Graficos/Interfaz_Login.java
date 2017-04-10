@@ -10,6 +10,7 @@ import Entidades.Equipos;
 import Entidades.Torneos;
 import Metodos.*;
 import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -21,7 +22,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
     
     
     //interfaces
-    public static Interfaz_Info                  info  = new Interfaz_Info();
+    public static Interfaz_Info_para_admi                  info  = new Interfaz_Info_para_admi();
     public static Interfaz_MenuPrincipal         principal  = new Interfaz_MenuPrincipal();
     public static Interfaz_Entrenador            entrenador = new Interfaz_Entrenador();
     public static Interfaz_Jugadores             jugadores  = new Interfaz_Jugadores();
@@ -133,72 +134,47 @@ public class Interfaz_Login extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    //QUEMA DE DATOS
-    //Datos para entrenador
-    String Enuevo1=Interfaz_Login.metEn.InsertarInicio("Pinto",20);
-    String Enuevo2=Interfaz_Login.metEn.InsertarInicio("Andrey",21);
-    String Enuevo3=Interfaz_Login.metEn.InsertarInicio("Oscar",22);
-    String Enuevo4=Interfaz_Login.metEn.InsertarInicio("Bob",23);
-    String Enuevo5=Interfaz_Login.metEn.InsertarInicio("Rammstein",24);
-    String Enuevo6=Interfaz_Login.metEn.InsertarInicio("Skiller",25);
-    String Enuevo7=Interfaz_Login.metEn.InsertarInicio("Red",26);
-    //Datos para jugadores
-    String Jnuevo1=Interfaz_Login.metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
-    String Jnuevo2=Interfaz_Login.metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
-    String Jnuevo3=Interfaz_Login.metJ.InsertarInicio("Acosta"   , 2,8,3,8,1,"Defensa");
-    String Jnuevo4=Interfaz_Login.metJ.InsertarInicio("Ganzalesz", 3,7,3,4,1,"Defensa");
-    String Jnuevo5=Interfaz_Login.metJ.InsertarInicio("Umaña"    , 4,5,3,8,7,"Defensa");
-    String Jnuevo6=Interfaz_Login.metJ.InsertarInicio("Cubero"   , 5,8,6,8,1,"Medio Campo");
-    String Jnuevo7=Interfaz_Login.metJ.InsertarInicio("Borges"   , 6,8,10,8,9,"Medio Campo");
-    String Jnuevo8=Interfaz_Login.metJ.InsertarInicio("Tejeda"   , 7,2,1,8,9,"Medio Campo");
-    String Jnuevo9=Interfaz_Login.metJ.InsertarInicio("Bolaños"   , 8,4,1,2,9,"Medio Campo");
-    String Jnuevo10=Interfaz_Login.metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
-    String Jnuevo11=Interfaz_Login.metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
-    String Jnuevo12=Interfaz_Login.metJ.InsertarFinal("Chicharito"   , 11,11,10,8,9,"Medio Campo");
-    String Jnuevo13=Interfaz_Login.metJ.InsertarInicio("Ochoa"   , 12,10,10,8,9,"Medio Campo");
-    //Datos para equipos
-    String EQnuevo1=Interfaz_Login.metE.InsertarInicio("Costa Rica", 0);
-    String EQnuevo2=Interfaz_Login.metE.InsertarInicio("Estados Unidos", 1);
-    String EQnuevo3=Interfaz_Login.metE.InsertarInicio("Honduras", 2);
-    String EQnuevo4=Interfaz_Login.metE.InsertarInicio("Mexico", 3);
-    String EQnuevo5=Interfaz_Login.metE.InsertarInicio("Portugal", 4);
-    String EQnuevo6=Interfaz_Login.metE.InsertarInicio("Brasil", 5);
-    String EQnuevo7=Interfaz_Login.metE.InsertarInicio("Italia", 6);
-    String EQnuevo8=Interfaz_Login.metE.InsertarInicio("Inglatera", 7);
-    String EQnuevo9=Interfaz_Login.metE.InsertarInicio("Urugay", 8);
-    String EQnuevo10=Interfaz_Login.metE.InsertarInicio("Croacia", 9);
-    String EQnuevo11=Interfaz_Login.metE.InsertarInicio("Francia", 10);
-    String EQnuevo12=Interfaz_Login.metE.InsertarInicio("Nigeria", 11);
-    String EQnuevo13=Interfaz_Login.metE.InsertarInicio("Congo", 12);
-    String EQnuevo14=Interfaz_Login.metE.InsertarInicio("Grecia", 13);
-    String EQnuevo15=Interfaz_Login.metE.InsertarInicio("Peru", 14);
-    String EQnuevo16=Interfaz_Login.metE.InsertarInicio("Alemania", 15);
+
+    public boolean verificaEntrenador_en_Equipo(String nombreEntrenador)
+    {
+        if (Interfaz_Login.metE.inicio==Interfaz_Login.metE.inicio.sig)
+        {
+            if(Interfaz_Login.metE.inicio.nombreEntrenador.equals(nombreEntrenador))
+            {
+                return true;
+            }
+          
+        }
+        else
+        {
+            Equipos temp = Interfaz_Login.metE.inicio;
+            Equipos aux = Interfaz_Login.metE.inicio;
+            while(aux.sig != temp)
+            {
+                if(aux.nombreEntrenador != null  && aux.nombreEntrenador.equals(nombreEntrenador))
+                {
+                    return true;
+                }
+                aux=aux.sig;
+            }
+            if(aux.nombreEntrenador != null  && aux.nombreEntrenador.equals(nombreEntrenador))
+            {
+                    return true;
+            }
+        }
+        
+        return false;
+    }
     
-    //Datos para torneo
-    String Tnuevo1=Interfaz_Login.metT.insertarInicio("Mundial 2014");
-    //Datos de enlace equipo/torneo
-    String ENnuevo1=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Costa Rica");
-    String ENnuevo2=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Estados Unidos");
-    String ENnuevo3=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Honduras");
-    String ENnuevo4=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo("Mundial 2014","Mexico");
-    //Datos de enlace  equipo/entrenador
-    String ENLnuevo1=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Oscar","Costa Rica");
-    String ENLnuevo2=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Pinto","Honduras");
-    String ENLnuevo3=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Skiller","Mexico");
-    String ENLnuevo4=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Red","Estados Unidos");
-    //Datos de enlace jugadores/equipo
-    String JEnuevo1=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Keylor");
-    String JEnuevo2=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Campbell");
-    String JEnuevo3=Interfaz_Login.metJE.enlazarEquipoJugador("Mexico","Chicharito");
-    String JEnuevo4=Interfaz_Login.metJE.enlazarEquipoJugador("Mexico","Ochoa");
+    
+ 
+    
+    
     
     
     private void IngresarBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_IngresarBtnMouseClicked
         
-        if( Interfaz_Login.info.jTable1  )
-        {
-            Interfaz_Login.info.refrescar();
-        }
+        
         
         // TODO add your handling code here:
         String nombreUsuario = nombreUsuarioTxt.getText();
@@ -207,29 +183,39 @@ public class Interfaz_Login extends javax.swing.JFrame {
                
         if (nombreUsuario.equals("Fifa") && contraseña.equals("123"))
         {
+            Interfaz_Login.principal.setVisible(true);
             this.dispose();
-            new Interfaz_MenuPrincipal().setVisible(true);
+            
         }
         else
         {
-            int bandera=0;
-            for(Entrenadores i:Interfaz_Login.metL.entrenadores){
-                if(i.getNombre().equals(nombreUsuario) && i.getId()==contraEntrenadores)
+            boolean verifica=verificaEntrenador_en_Equipo(nombreUsuario);
+            
+            if(verifica==true)
+            {
+                int bandera=0;
+                for(Entrenadores i:Interfaz_Login.metL.entrenadores){
+                    if(i.getNombre().equals(nombreUsuario) && i.getId()==contraEntrenadores)
+                    {
+                        bandera=1;
+
+                        //
+                        Interfaz_Login.userEntrenador.jLabel2.setText(nombreUsuario );
+                        //
+                        Interfaz_Login.userEntrenador.setVisible(true);
+                        this.dispose();
+                    }
+                }
+                if(bandera==0)
                 {
-                    bandera=1;
-                   
-                    //
-                    Interfaz_Login.userEntrenador.jLabe2.setText(i.getNombre());
-                    //
-                    
-                    this.dispose();
-                    new Interfaz_Usuario_Entrenador().setVisible(true);  
+                JOptionPane.showMessageDialog(null,"Incorrecto");
                 }
             }
-            if(bandera==0)
+            else
             {
-            JOptionPane.showMessageDialog(null,"Incorrecto");
+                JOptionPane.showMessageDialog(null,"El usuario ingresado no se encontro vinculado a un equipo");
             }
+            
   
         }
         

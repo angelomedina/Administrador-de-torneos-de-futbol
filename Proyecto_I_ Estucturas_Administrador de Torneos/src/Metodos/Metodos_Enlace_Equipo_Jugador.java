@@ -28,12 +28,30 @@ public class Metodos_Enlace_Equipo_Jugador {
           
           if(equipo.sigSub1 == null)
           {
-              equipo.sigSub1=sub;
-              return "Enlazados";
+           
+                equipo.sigSub1=sub;
+                //
+                sub.cantidad++; // sumo la cantidad de jugadores al equipo maximo 11
+                //
+                return "Enlazados";
+           
+            
           }
-          sub.sig=equipo.sigSub1;
-          equipo.sigSub1=sub;
-          return "Enlazados";
+          if(sub.cantidad < 11  ) 
+          {
+            sub.sig=equipo.sigSub1;
+            equipo.sigSub1=sub;
+            
+            //
+            sub.cantidad++; // sumo la cantidad de jugadores al equipo maximo 11
+            //
+            return "Enlazados";
+          }
+          else
+          {
+              return "El equipo ya tiene los 11 jugadores";
+          }
+          
           
         }
         return "Error Equipo o Jugadores se encuantran vacios";
