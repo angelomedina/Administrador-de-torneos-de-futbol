@@ -166,7 +166,7 @@ public class Interfaz_Usuario_Entrenador_Comprar_Enlazar extends javax.swing.JFr
             String nombreJugador=jTextField2.getText();
      
             //String insertado=Interfaz_Login.metJE.enlazarEquipoJugador(nombreEquipo, nombreJugador);
-            String insertado=Interfaz_Login.metJE.enlazarEquipoJugador(nombreEquipo, nombreJugador);
+            String insertado=Interfaz_Login.metJE.enlazarEquipoJugadorLibre(nombreEquipo, nombreJugador);
             JOptionPane.showMessageDialog(null,insertado);
             Imprimir(nombreEquipo);
             

@@ -22,7 +22,9 @@ public class Jugadores {
 
     
     
-    private String estado="Disponibe";
+    private String estado="Disponibe"; // aqui van a haber tres estados ,1: Disponible osea sin equipo, 2: No disponible ose tien un equipo y 3: comppra por traspaso osea que i tiene equipo pero ese lo esta vendiendo
+    
+    
     
     public String getEstado() {
         return estado;

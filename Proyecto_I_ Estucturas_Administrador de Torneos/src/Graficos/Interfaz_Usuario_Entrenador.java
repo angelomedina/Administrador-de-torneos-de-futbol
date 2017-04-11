@@ -41,6 +41,7 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        jMenuItem4 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -66,8 +67,13 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
         jMenuBar1.add(ver_toda_info_del_sistema_);
 
         jMenu3.setText("Opciones");
+        jMenu3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenu3ActionPerformed(evt);
+            }
+        });
 
-        jMenuItem1.setText("Comprar");
+        jMenuItem1.setText("Comprar Libre");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -75,11 +81,29 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
         });
         jMenu3.add(jMenuItem1);
 
-        jMenuItem2.setText("Vender");
+        jMenuItem2.setText("Compra por Traspaso");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem2);
 
-        jMenuItem3.setText("Despedir");
+        jMenuItem3.setText("Vender");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu3.add(jMenuItem3);
+
+        jMenuItem4.setText("Despedir");
+        jMenuItem4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem4ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem4);
 
         jMenuBar1.add(jMenu3);
 
@@ -138,10 +162,32 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenu2MouseClicked
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-         Interfaz_Login.enlaceJE.jLabel4.setText(Interfaz_Login.userEntrenador.jLabel4.getText());
+        Interfaz_Login.enlaceJE.jLabel4.setText(Interfaz_Login.userEntrenador.jLabel4.getText());
         Interfaz_Login.enlaceJE .setVisible(true);
         this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenu3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenu3ActionPerformed
+
+    }//GEN-LAST:event_jMenu3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        Interfaz_Login.traspaso.jLabel3.setText(Interfaz_Login.userEntrenador.jLabel4.getText());
+        Interfaz_Login.traspaso.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        Interfaz_Login.venta.jLabel2.setText(Interfaz_Login.userEntrenador.jLabel4.getText());
+        Interfaz_Login.venta.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
+
+    private void jMenuItem4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem4ActionPerformed
+        Interfaz_Login.despedir.jLabel3.setText(Interfaz_Login.userEntrenador.jLabel4.getText());
+        Interfaz_Login.despedir.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -190,6 +236,7 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
+    private javax.swing.JMenuItem jMenuItem4;
     private javax.swing.JMenu ver_toda_info_del_sistema_;
     // End of variables declaration//GEN-END:variables
 }

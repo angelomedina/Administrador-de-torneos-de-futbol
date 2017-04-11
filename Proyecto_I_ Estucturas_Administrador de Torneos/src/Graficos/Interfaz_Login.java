@@ -21,9 +21,12 @@ public class Interfaz_Login extends javax.swing.JFrame {
     
   
      
-     
+
     //interfaces
-    public static Interfaz_Info_para_admi                  info  = new Interfaz_Info_para_admi();
+    public static Interfaz_Entrenador_Despedir       despedir    = new Interfaz_Entrenador_Despedir();
+    public static Interfaz_Entrenador_Venta_Jugador       venta     = new Interfaz_Entrenador_Venta_Jugador();
+    public static Interfaz_Usuario_Entrenador_Compra_por_Traspaso       traspaso     = new Interfaz_Usuario_Entrenador_Compra_por_Traspaso();
+    public static Interfaz_Info_para_admi        info      = new Interfaz_Info_para_admi();
     public static Interfaz_MenuPrincipal         principal  = new Interfaz_MenuPrincipal();
     public static Interfaz_Entrenador            entrenador = new Interfaz_Entrenador();
     public static Interfaz_Jugadores             jugadores  = new Interfaz_Jugadores();
@@ -36,8 +39,8 @@ public class Interfaz_Login extends javax.swing.JFrame {
     public static Interfaz_Info_para_entrenador     info2  =  new Interfaz_Info_para_entrenador();
     
     
-    
     //metodos
+    public static Metodos_Entrenador_Venta         metVenta =  new Metodos_Entrenador_Venta();
     public static Metodos_Enlace_Torneo_Equipo     metET =  new Metodos_Enlace_Torneo_Equipo();
     public static MetodosEquipos                   metE  =  new MetodosEquipos();
     public static MetodosEntrenador                metEn =  new MetodosEntrenador(); 
@@ -204,6 +207,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
                         Interfaz_Login.userEntrenador.jLabel2.setText(nombreUsuario );
                         Interfaz_Login.userEntrenador.jLabel4.setText(verifica.nombre );
                         Interfaz_Login.enlaceJE.jLabel6.setText(Integer.toString(verifica.dinero));
+                        Interfaz_Login.traspaso.jLabel4.setText(Integer.toString(verifica.dinero));
                         //
                         Interfaz_Login.userEntrenador.setVisible(true);
                         this.dispose();

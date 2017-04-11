@@ -99,17 +99,17 @@ public class Main {
     String ENLnuevo3=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("M.Herrera","Mexico");
     String ENLnuevo4=Interfaz_Login.metEnE.insertarEnlaceEntrenadorEquipo("Roy","Estados Unidos");
     //Datos de enlace jugadores/equipo
-    String JEnuevo1=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Keylor");
-    String JEnuevo2=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Campbell");
-    String JEnuevo3=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Gamboa");
-    String JEnuevo4=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Acosta");
-    String JEnuevo5=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","B.Ruiz");
-    String JEnuevo6=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Bolaños");
-    String JEnuevo7=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Tejeda");
-    String JEnuevo8=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Umaña");
-    String JEnuevo9=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Cubero");
-    String JEnuevo10=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Gonzalez");
-    String JEnuevo11=Interfaz_Login.metJE.enlazarEquipoJugador("Costa Rica","Borges");
+    String JEnuevo1=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Keylor");
+    String JEnuevo2=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Campbell");
+    String JEnuevo3=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Gamboa");
+    String JEnuevo4=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Acosta");
+    String JEnuevo5=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","B.Ruiz");
+    String JEnuevo6=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Bolaños");
+    String JEnuevo7=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Tejeda");
+    String JEnuevo8=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Umaña");
+    String JEnuevo9=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Cubero");
+    String JEnuevo10=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Gonzalez");
+    String JEnuevo11=Interfaz_Login.metJE.enlazarEquipoJugadorLibre("Costa Rica","Borges");
     
         new Interfaz_Login(new MetodosLogin()).setVisible(true);
     }

@@ -301,26 +301,6 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
     }//GEN-LAST:event__imprime_jugador_por_equipo_ActionPerformed
 
     
-    void limpiaTabla(){
-        try{
-            temp = (DefaultTableModel) jTable1.getModel();
-            int a =temp.getRowCount()-1;
-            for(int i=0; i<a; i++)
-                temp.removeRow(i);
-        }catch(Exception e){
-            System.out.println(e);
-        }
-    }
-    
-    public static void reiniciarJTable(javax.swing.JTable Tabla){
-        DefaultTableModel modelo = (DefaultTableModel) Tabla.getModel();
-        while(modelo.getRowCount()>0)modelo.removeRow(0);
- 
-        TableColumnModel modCol = Tabla.getColumnModel();
-        while(modCol.getColumnCount()>0)modCol.removeColumn(modCol.getColumn(0));
-    }
-    
-    
     
     
     public void ImprimirJugadorXEquipo()
@@ -503,7 +483,7 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
         
     }
     
-     public void imprimirEquipos()
+    public void imprimirEquipos()
     {
         
        
