@@ -217,7 +217,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                     String insertado=Interfaz_Login.metET.insertarInicioEnlaceTorneoEquipo(nombreTorneo, nombreEquipo);
                     imprimirSub2();
                     JOptionPane.showMessageDialog(null,insertado);
-                    imprimirSub2();
+                    //imprimirSub2();
                     //jLabel7.setText("Informacion enlace Equipo/Torneo");
 
                 }
@@ -340,6 +340,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
         jTable1.setModel(enlace1);
         
         ListModelTorneo.clear();
+        
         if (Interfaz_Login.metE.inicio==null)
         {
             JOptionPane.showMessageDialog(null, "Lista Vacia");
@@ -371,6 +372,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
                             enlace1.addRow(datos);
                             break;
                         }
+                        enlace=enlace.sig; // avanzo con los enlces
 
                     }
                     equipo=equipo.sig;
@@ -386,6 +388,7 @@ public class Interfaz_Enlaces extends javax.swing.JFrame {
               }
               torneo=torneo.sig;
             }
+            
         }
     }  
     

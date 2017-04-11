@@ -16,8 +16,63 @@ public class Equipos {
     public String nombre;
     public int    codigo; 
     public String nombreEntrenador;
+    public int    dinero= 3000000;
     
-    public int cant;
+    public int cant; // cantidad de jugadores
+    public int suma;
+    
+    
+    //atributos condicionales:4 defensas, 4 medio campo, 2 delanteros y 1 portero.
+    public int defensas;
+    public int sumaDefensa=1;
+    
+    public int medioCampo;
+    public int sumamedioCampo=1;
+    
+    public int delantero;
+    public int sumaDelantero=1;
+    
+    public int portero;
+    public int sumaPortero=1;
+
+    
+    
+    
+    public int getDefensas() {
+        return defensas;
+    }
+
+    public void setDefensas(int defensas) {
+        this.defensas = defensas;
+    }
+
+    public int getMedioCampo() {
+        return medioCampo;
+    }
+
+    public void setMedioCampo(int medioCampo) {
+        this.medioCampo = medioCampo;
+    }
+
+    public int getDelantero() {
+        return delantero;
+    }
+
+    public void setDelantero(int delatero) {
+        this.delantero = delatero;
+    }
+
+    public int getPortero() {
+        return portero;
+    }
+
+    public void setPortero(int portero) {
+        this.portero = portero;
+    }
+    
+    
+    
+    
 
     public int getCant() {
         return cant;

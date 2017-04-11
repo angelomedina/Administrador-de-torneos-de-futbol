@@ -19,8 +19,9 @@ import javax.swing.table.DefaultTableModel;
 public class Interfaz_Login extends javax.swing.JFrame {
   
     
-    
-    
+  
+     
+     
     //interfaces
     public static Interfaz_Info_para_admi                  info  = new Interfaz_Info_para_admi();
     public static Interfaz_MenuPrincipal         principal  = new Interfaz_MenuPrincipal();
@@ -31,7 +32,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
     public static Interfaz_Enlaces               enlaces   =  new Interfaz_Enlaces();
     public static Interfaz_Estadio               estadio   =  new Interfaz_Estadio();
     public static Interfaz_Usuario_Entrenador      userEntrenador  =  new Interfaz_Usuario_Entrenador();
-    public static Interfaz_Usuario_Entrenador_Enlazar_JE      enlaceJE  =  new Interfaz_Usuario_Entrenador_Enlazar_JE();
+    public static Interfaz_Usuario_Entrenador_Comprar_Enlazar      enlaceJE  =  new Interfaz_Usuario_Entrenador_Comprar_Enlazar();
     public static Interfaz_Info_para_entrenador     info2  =  new Interfaz_Info_para_entrenador();
     
     
@@ -44,7 +45,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
     public static MetodosTorneo                    metT  =  new MetodosTorneo();
     public static Metodos_Enlace_Entrenador_Equipo metEnE  =  new Metodos_Enlace_Entrenador_Equipo();
     public static MetodosLogin                     metL  =  new MetodosLogin();
-    public static Metodos_Enlace_Equipo_Jugador    metJE =  new Metodos_Enlace_Equipo_Jugador();
+    public static Metodos_Enlace_Jugador_Equipo                 metJE  = new Metodos_Enlace_Jugador_Equipo();
     
     
     
@@ -91,7 +92,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
             }
         });
 
-        jLabel3.setFont(new java.awt.Font("Dialog", 1, 12)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         jLabel3.setText("Log In");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -128,7 +129,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
                     .addComponent(contraseñaTxt, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(IngresarBtn)
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
 
         pack();
@@ -202,6 +203,7 @@ public class Interfaz_Login extends javax.swing.JFrame {
                         //
                         Interfaz_Login.userEntrenador.jLabel2.setText(nombreUsuario );
                         Interfaz_Login.userEntrenador.jLabel4.setText(verifica.nombre );
+                        Interfaz_Login.enlaceJE.jLabel6.setText(Integer.toString(verifica.dinero));
                         //
                         Interfaz_Login.userEntrenador.setVisible(true);
                         this.dispose();

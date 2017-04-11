@@ -36,8 +36,11 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
         ver_toda_info_del_sistema_ = new javax.swing.JMenu();
+        jMenu3 = new javax.swing.JMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -54,14 +57,6 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
 
         jLabel4.setText("jLabel4");
 
-        jMenu1.setText("Enlazar");
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(jMenu1);
-
         ver_toda_info_del_sistema_.setText("Ver Informacion");
         ver_toda_info_del_sistema_.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -69,6 +64,24 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(ver_toda_info_del_sistema_);
+
+        jMenu3.setText("Opciones");
+
+        jMenuItem1.setText("Comprar");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jMenu3.add(jMenuItem1);
+
+        jMenuItem2.setText("Vender");
+        jMenu3.add(jMenuItem2);
+
+        jMenuItem3.setText("Despedir");
+        jMenu3.add(jMenuItem3);
+
+        jMenuBar1.add(jMenu3);
 
         jMenu2.setText("Salir");
         jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -108,18 +121,11 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel3)
                     .addComponent(jLabel4))
-                .addContainerGap(274, Short.MAX_VALUE))
+                .addContainerGap(276, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
-        
-        Interfaz_Login.enlaceJE.jLabel4.setText(Interfaz_Login.userEntrenador.jLabel4.getText());
-        Interfaz_Login.enlaceJE .setVisible(true);
-        this.dispose();
-    }//GEN-LAST:event_jMenu1MouseClicked
 
     private void ver_toda_info_del_sistema_MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ver_toda_info_del_sistema_MouseClicked
         Interfaz_Login.info2.setVisible(true);
@@ -130,6 +136,12 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
        new Interfaz_Login(new MetodosLogin()).setVisible(true);
        this.dispose();
     }//GEN-LAST:event_jMenu2MouseClicked
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+         Interfaz_Login.enlaceJE.jLabel4.setText(Interfaz_Login.userEntrenador.jLabel4.getText());
+        Interfaz_Login.enlaceJE .setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,9 +184,12 @@ public class Interfaz_Usuario_Entrenador extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
-    private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenu jMenu3;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JMenu ver_toda_info_del_sistema_;
     // End of variables declaration//GEN-END:variables
 }

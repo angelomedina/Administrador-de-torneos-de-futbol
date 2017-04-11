@@ -42,19 +42,32 @@ public class Main {
     String Enuevo15=Interfaz_Login.metEn.InsertarInicio("Joachim",34);
     String Enuevo16=Interfaz_Login.metEn.InsertarInicio("Roy",35);
     //Datos para jugadores
-    String Jnuevo1=Interfaz_Login.metJ.InsertarInicio("Keylor"   , 0,10,10,10,10,"Portero");
-    String Jnuevo2=Interfaz_Login.metJ.InsertarInicio("Gamboa"   , 1,5,9,2,9,"Defensa");
-    String Jnuevo3=Interfaz_Login.metJ.InsertarInicio("Acosta"   , 2,8,3,8,1,"Defensa");
-    String Jnuevo4=Interfaz_Login.metJ.InsertarInicio("Gonzalez", 3,7,3,4,1,"Defensa");
-    String Jnuevo5=Interfaz_Login.metJ.InsertarInicio("Umaña"    , 4,5,3,8,7,"Defensa");
-    String Jnuevo6=Interfaz_Login.metJ.InsertarInicio("Cubero"   , 5,8,6,8,1,"Medio Campo");
-    String Jnuevo7=Interfaz_Login.metJ.InsertarInicio("Borges"   , 6,8,10,8,9,"Medio Campo");
-    String Jnuevo8=Interfaz_Login.metJ.InsertarInicio("Tejeda"   , 7,2,1,8,9,"Medio Campo");
-    String Jnuevo9=Interfaz_Login.metJ.InsertarInicio("Bolaños"   , 8,4,1,2,9,"Medio Campo");
-    String Jnuevo10=Interfaz_Login.metJ.InsertarInicio("Campbell" , 9,2,9,4,9,"Delantero");
-    String Jnuevo11=Interfaz_Login.metJ.InsertarInicio("B.Ruiz"   , 10,10,10,8,9,"Delantero");
-    String Jnuevo12=Interfaz_Login.metJ.InsertarFinal("Chicharito"   , 11,11,10,8,9,"Medio Campo");
-    String Jnuevo13=Interfaz_Login.metJ.InsertarInicio("Ochoa"   , 12,10,10,8,9,"Medio Campo");
+    //Costa Rica
+    String Jnuevo1=Interfaz_Login.metJ.InsertarInicio("Keylor"   , 0,1,1,1,1,"Portero");
+    String Jnuevo2=Interfaz_Login.metJ.InsertarInicio("Gamboa"   , 1,1,1,1,1,"Defensa");
+    String Jnuevo3=Interfaz_Login.metJ.InsertarInicio("Acosta"   , 2,1,1,1,1,"Defensa");
+    String Jnuevo4=Interfaz_Login.metJ.InsertarInicio("Gonzalez", 3,1,1,1,1,"Defensa");
+    String Jnuevo5=Interfaz_Login.metJ.InsertarInicio("Umaña"    , 4,1,1,1,1,"Defensa");
+    String Jnuevo6=Interfaz_Login.metJ.InsertarInicio("Cubero"   , 5,1,1,1,1,"Medio Campo");
+    String Jnuevo7=Interfaz_Login.metJ.InsertarInicio("Borges"   , 6,1,1,1,1,"Medio Campo");
+    String Jnuevo8=Interfaz_Login.metJ.InsertarInicio("Tejeda"   , 7,1,1,1,1,"Medio Campo");
+    String Jnuevo9=Interfaz_Login.metJ.InsertarInicio("Bolaños"   , 8,1,1,1,1,"Medio Campo");
+    String Jnuevo10=Interfaz_Login.metJ.InsertarInicio("Campbell" , 9,1,1,1,1,"Delantero");
+    String Jnuevo11=Interfaz_Login.metJ.InsertarInicio("B.Ruiz"   , 10,1,1,1,1,"Delantero");
+    //Mexico
+    String Jnuevo12=Interfaz_Login.metJ.InsertarFinal("Chicharito"   , 11,1,1,1,1,"Delantero");
+    String Jnuevo13=Interfaz_Login.metJ.InsertarInicio("Ochoa"   , 12,1,1,1,1,"Portero");
+    String Jnuevo14=Interfaz_Login.metJ.InsertarInicio("Luyun"   , 13,1,1,1,1,"Delantero");
+    String Jnuevo15=Interfaz_Login.metJ.InsertarInicio("Aguilar"   , 14,1,1,1,1,"Medio Campo");
+    String Jnuevo16=Interfaz_Login.metJ.InsertarInicio("Moreno"   , 15,1,1,1,1,"Medio Campo");
+    String Jnuevo17=Interfaz_Login.metJ.InsertarInicio("Marquez"   , 16,1,1,1,1,"Medio Campo");
+    String Jnuevo18=Interfaz_Login.metJ.InsertarInicio("Reyes"   , 17,1,1,1,1,"Medio Campo");
+    String Jnuevo19=Interfaz_Login.metJ.InsertarInicio("Salcido"   , 18,1,1,1,1,"Defensa");
+    String Jnuevo20=Interfaz_Login.metJ.InsertarInicio("Guardado"   , 19,1,1,1,1,"Defensa");
+    String Jnuevo21=Interfaz_Login.metJ.InsertarInicio("Rodriguez"   ,20,1,1,1,1,"Defensa");
+    String Jnuevo22=Interfaz_Login.metJ.InsertarInicio("Ponce"   , 21,1,1,1,1,"Defensa");
+    
+    String Jnuevo23=Interfaz_Login.metJ.InsertarInicio("Fabian"   ,22,1,1,1,1,"Delantero");
     //Datos para equipos
     String EQnuevo1=Interfaz_Login.metE.InsertarInicio("Costa Rica", 0);
     String EQnuevo2=Interfaz_Login.metE.InsertarInicio("Estados Unidos", 1);

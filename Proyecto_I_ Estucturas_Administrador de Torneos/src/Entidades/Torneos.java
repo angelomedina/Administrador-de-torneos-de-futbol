@@ -12,8 +12,19 @@ package Entidades;
 public class Torneos {
     // torneo es una lista doble 
     
-    public String nombre; 
-    public Torneos sig,ant;  
+    public String  nombre; 
+    public Torneos sig,ant; 
+    
+    public int  cantidadTorneo;
+    public int  suma;
+
+    public int getCantidadTorneo() {
+        return cantidadTorneo;
+    }
+
+    public void setCantidadTorneo(int cantidadTorneo) {
+        this.cantidadTorneo = cantidadTorneo;
+    }
     
     
     

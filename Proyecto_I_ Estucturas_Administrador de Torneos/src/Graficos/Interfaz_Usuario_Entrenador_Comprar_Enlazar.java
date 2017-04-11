@@ -15,13 +15,13 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author Usuario
  */
-public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
+public class Interfaz_Usuario_Entrenador_Comprar_Enlazar extends javax.swing.JFrame {
 
     DefaultTableModel equipos;
     /**
      * Creates new form Interfaz_Usuario_Entrenador_Enlazar_JE
      */
-    public Interfaz_Usuario_Entrenador_Enlazar_JE() {
+    public Interfaz_Usuario_Entrenador_Comprar_Enlazar() {
         initComponents();
         this.setLocationRelativeTo(null);
         this.setResizable(false);
@@ -45,6 +45,8 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jLabel4 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Usuario Entrenador Enlazar Jugador con Equipo");
@@ -57,7 +59,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
 
         jLabel3.setText("Nombre del Jugador");
 
-        _enlazar_Jugador_Entrenador_.setText("Enlazar");
+        _enlazar_Jugador_Entrenador_.setText("Comprar");
         _enlazar_Jugador_Entrenador_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 _enlazar_Jugador_Entrenador_ActionPerformed(evt);
@@ -88,57 +90,63 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
         jLabel4.setForeground(new java.awt.Color(0, 102, 0));
         jLabel4.setText("jLabel4");
 
+        jLabel5.setText("Dinero de mi Equipo");
+
+        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(0, 102, 0));
+        jLabel6.setText("jLabel6");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(29, 29, 29)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel1)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jButton2))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel2))
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel3))
                         .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jTextField2)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(_enlazar_Jugador_Entrenador_)
-                                    .addComponent(jLabel4))
-                                .addGap(0, 0, Short.MAX_VALUE)))))
-                .addGap(18, 18, 18)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addContainerGap())
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                                .addComponent(jLabel6)
+                                .addComponent(jLabel4))
+                            .addComponent(_enlazar_Jugador_Entrenador_)
+                            .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 89, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 452, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
+                .addGap(26, 26, 26)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jButton2))
+                .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(29, 29, 29)
-                        .addComponent(jLabel1))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jButton2)))
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(26, 26, 26)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel2)
                             .addComponent(jLabel4))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGap(9, 9, 9)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6))
+                        .addGap(18, 18, 18)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel3)
                             .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(_enlazar_Jugador_Entrenador_))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -157,6 +165,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
             String nombreEquipo=Interfaz_Login.userEntrenador.jLabel4.getText();
             String nombreJugador=jTextField2.getText();
      
+            //String insertado=Interfaz_Login.metJE.enlazarEquipoJugador(nombreEquipo, nombreJugador);
             String insertado=Interfaz_Login.metJE.enlazarEquipoJugador(nombreEquipo, nombreJugador);
             JOptionPane.showMessageDialog(null,insertado);
             Imprimir(nombreEquipo);
@@ -172,7 +181,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
     public void Imprimir(String nombreEquipo)
     {
         //Tabla para Equipos
-        String titulo3[]={"Nombre","Jugador"};
+        String titulo3[]={"Nombre","Jugador","Posicion"};
         String datos3[][]={};
         equipos=new DefaultTableModel(datos3,titulo3);
         jTable1.setModel(equipos);
@@ -186,7 +195,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
             Enlace_Jugador_Equipo  sub=Interfaz_Login.metE.inicio.sigSub1;
             while(sub != null) 
             { 
-            Object datos[]={Interfaz_Login.metE.inicio.nombre,Interfaz_Login.metE.inicio.sigSub1.sigJugador.getNombre()};
+            Object datos[]={Interfaz_Login.metE.inicio.nombre,Interfaz_Login.metE.inicio.sigSub1.sigJugador.getNombre(),Interfaz_Login.metE.inicio.sigSub1.sigJugador.getPosicion()};
             equipos.addRow(datos);
             sub=sub.sig;
             
@@ -206,7 +215,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
                     Enlace_Jugador_Equipo  sub=aux.sigSub1;
                     while(sub != null) 
                     { 
-                    Object datos[]={aux.nombre,sub.sigJugador.getNombre()};
+                    Object datos[]={aux.nombre,sub.sigJugador.getNombre(),sub.sigJugador.getPosicion()};
                     equipos.addRow(datos);
                     sub=sub.sig;
                     }
@@ -218,7 +227,7 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
                 Enlace_Jugador_Equipo  sub=aux.sigSub1;
                     while(sub != null) 
                     { 
-                    Object datos[]={aux.nombre,sub.sigJugador.getNombre()};
+                    Object datos[]={aux.nombre,sub.sigJugador.getNombre(),sub.sigJugador.getPosicion()};
                     equipos.addRow(datos);
                     sub=sub.sig;
                     }
@@ -243,20 +252,21 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Enlazar_JE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Comprar_Enlazar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Enlazar_JE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Comprar_Enlazar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Enlazar_JE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Comprar_Enlazar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Enlazar_JE.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Interfaz_Usuario_Entrenador_Comprar_Enlazar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Interfaz_Usuario_Entrenador_Enlazar_JE().setVisible(true);
+                new Interfaz_Usuario_Entrenador_Comprar_Enlazar().setVisible(true);
             }
         });
     }
@@ -268,6 +278,8 @@ public class Interfaz_Usuario_Entrenador_Enlazar_JE extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     public javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane2;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField2;

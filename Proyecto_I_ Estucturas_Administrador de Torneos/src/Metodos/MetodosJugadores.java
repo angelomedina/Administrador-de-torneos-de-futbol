@@ -35,31 +35,36 @@ public class MetodosJugadores {
     public String InsertarInicio(String nombre,long cedula,int fisico,int defensa ,int dribbling ,int disparo,String posicion)
     {
         
-        boolean verifica = verificaCedula(cedula);
+        boolean verificaCedula = verificaCedula(cedula);
+        boolean verificaNombre = verificaNombre(nombre);
         int   valor;
         
-        if (verifica == false)
+        if (verificaCedula == false )
         {
-            if(posicion.equals("Portero"))
+            if (verificaNombre == false )
             {
-                valor=calcularValorPortero(fisico, defensa ,dribbling);
-                 
-            }
-            else
-            {
-                valor=calcularValor(fisico, defensa ,dribbling , disparo);
-            }
-            
-            
-            Jugadores nuevo=new Jugadores(nombre,cedula,valor,posicion); 
-            if (inicio==null)
-            {   
-                inicio= nuevo;    
+                if(posicion.equals("Portero"))
+                {
+                    valor=calcularValorPortero(fisico, defensa ,dribbling);
+
+                }
+                else
+                {
+                    valor=calcularValor(fisico, defensa ,dribbling , disparo);
+                }
+
+
+                Jugadores nuevo=new Jugadores(nombre,cedula,valor,posicion); 
+                if (inicio==null)
+                {   
+                    inicio= nuevo;    
+                    return "Agregado";
+                }
+                nuevo.sig=inicio;
+                inicio=nuevo;
                 return "Agregado";
             }
-            nuevo.sig=inicio;
-            inicio=nuevo;
-            return "Agregado";
+            return "El nombre no se encuentra disponible";
         }        
         return "La cedula seleccionada no se encuentra disponible";
 
@@ -116,6 +121,25 @@ public class MetodosJugadores {
         return false;        
     }
     
+    
+    public boolean verificaNombre(String nombre)
+    {
+        if (inicio==null) // pregunta si esta vacio
+        {
+            return false;
+        }
+        Jugadores aux=inicio; // INICIO ES DE TIPO CLIENTE POR ESO 
+        
+        while(aux !=null)
+        {
+            if (aux.getNombre().equals(nombre))// equals es solo para comparar string
+            {
+                return true;           
+            }
+            aux =aux.sig;
+        }
+        return false;        
+    }
     
      public Jugadores buscarSimple(String nombre)
     {

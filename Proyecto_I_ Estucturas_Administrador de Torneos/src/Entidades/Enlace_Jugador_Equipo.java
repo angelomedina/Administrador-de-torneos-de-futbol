@@ -14,7 +14,6 @@ public class Enlace_Jugador_Equipo {
     public Enlace_Jugador_Equipo sig;
     public Jugadores  sigJugador;
 
-    //prueba
 
     
     public Enlace_Jugador_Equipo() {

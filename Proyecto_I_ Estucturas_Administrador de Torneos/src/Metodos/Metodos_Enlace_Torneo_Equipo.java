@@ -27,30 +27,70 @@ public class Metodos_Enlace_Torneo_Equipo {
         {
             if(Equipo != null)
             {
-                Enlace_Torneo_Equipos sub=new Enlace_Torneo_Equipos();
-                sub.sigTorneo=Torneo;// este sub va vinculado con e torneo
-                
-                if(Equipo.sigSub ==null )
-                {
-                    Equipo.sigSub=sub;
-                    return "Enlazados";
+                if(Torneo.cantidadTorneo <= 14)
+                {   
+                    Enlace_Torneo_Equipos sub=new Enlace_Torneo_Equipos();
+                    sub.sigTorneo=Torneo;// este sub va vinculado con e torneo
+
+
+                    if(Equipo.sigSub ==null )
+                    {
+                        if(Torneo.cantidadTorneo <= 14)// ingreso 14 para que sean 16
+                        {
+                            //System.out.println("Entro al null");
+                            //sumo la cantidad de equipos al torneo
+                        Torneo.setCantidadTorneo(Torneo.suma++);
+                            //System.out.println(Torneo.getCantidadTorneo());
+                            //
+
+                        Equipo.sigSub=sub;
+                        return "Enlazados";
+                        }
+                        {
+                          return "El torneo consta de 16 equipos y ya alcanzo el maximo";
+                        }
+
+                    }
+                    if(Torneo.cantidadTorneo <= 14) // ingreso 14 para que sean 16
+                    {
+                            //System.out.println("Entro al if");
+
+                            //sumo la cantidad de equipos al torneo
+                            Torneo.setCantidadTorneo(Torneo.suma++);
+                            //System.out.println(Torneo.getCantidadTorneo());
+                            //
+                            sub.sig=Equipo.sigSub;
+                            Equipo.sigSub=sub;
+                            return "Enlazados"; 
+                    }
+                    else
+                    {
+                            return "El torneo consta de 16 equipos y ya alcanzo el maximo";
+                    }
                 }
-                sub.sig=Equipo.sigSub;
-                Equipo.sigSub=sub;
-                return "Enlazados";           
+                else
+                {
+                   return "El torneo ya esta lleno"; 
+                }
             }
             else
             {
-            return "No se enontro el Equipo";
+                return "No se enontro el Equipo";
             }
         }
         else
         {
-        return "No se encontro el Torneo";
+            return "No se encontro el Torneo";
         }
-        
-        
         
     }
     
 }
+    
+   
+        
+        
+        
+    
+    
+

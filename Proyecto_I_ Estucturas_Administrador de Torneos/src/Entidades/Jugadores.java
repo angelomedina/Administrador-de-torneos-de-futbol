@@ -19,6 +19,18 @@ public class Jugadores {
     private long    _cedula;
     private long   _valor;
     private String _posicion;
+
+    
+    
+    private String estado="Disponibe";
+    
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
     
     // atributos por defecto
    

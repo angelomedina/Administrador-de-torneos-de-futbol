@@ -281,7 +281,7 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
 
     private void _Mostrar_Enlace1_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Mostrar_Enlace1_ActionPerformed
  
-        imprimirEnlace1(); 
+        imprimir_equios_por_torneo();
     }//GEN-LAST:event__Mostrar_Enlace1_ActionPerformed
 
     private void _Atras_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event__Atras_ActionPerformed
@@ -384,14 +384,17 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
     }
     
     
-     public void imprimirEnlace1()  
+       //fecha 04/04/17
+    // por este metodo va a imprimir por cada torneo sus integrantes
+    public void imprimir_equios_por_torneo()  
     {
-  
+   
         //Tabla para Torneo
         String titulo1[]={"Torneo","Equipo"};
         String datos1[][]={};
         enlace1=new DefaultTableModel(datos1,titulo1);
         jTable1.setModel(enlace1);
+        
         
         if (Interfaz_Login.metE.inicio==null)
         {
@@ -401,12 +404,9 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
         else
         {          
             Torneos torneo = Interfaz_Login.metT.inicio;    // entro a los Torneo
-            Equipos equipo = Interfaz_Login.metE.inicio;
-            
-            if (torneo != null   ||  equipo != null)
-            {
             while(  torneo != null)
             { 
+              Equipos equipo = Interfaz_Login.metE.inicio;
               if(equipo==null)
               {
                 JOptionPane.showMessageDialog(null,"Lista de equipos esta vacia");
@@ -427,6 +427,7 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
                             enlace1.addRow(datos);
                             break;
                         }
+                        enlace=enlace.sig; // avanzo con los enlces
 
                     }
                     equipo=equipo.sig;
@@ -442,14 +443,11 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
               }
               torneo=torneo.sig;
             }
-            }
-            else
-            {
-                JOptionPane.showMessageDialog(null,"No hay enlaces");
-            }
-          
+            
         }
-    } 
+    }
+    
+
     
     public void imprimirTorneo(){
         
@@ -543,7 +541,7 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
         
      
         //Tabla para Jugadores
-        String titulo2[]={"Nombre","Cedula","Posicion","Valor"};
+        String titulo2[]={"Nombre","Cedula","Posicion","Valor","Estado"};
         String datos2[][]={};
         jugadores=new DefaultTableModel(datos2,titulo2);
         jTable1.setModel(jugadores);
@@ -552,7 +550,7 @@ public class Interfaz_Info_para_entrenador extends javax.swing.JFrame {
         while(temp != null)
         {
         //Tabla de Jugadores
-        Object datos[]={temp.getNombre(),temp.getCedula(),temp.getPosicion(),temp.getValor()+" $"};
+        Object datos[]={temp.getNombre(),temp.getCedula(),temp.getPosicion(),temp.getValor()+" $",temp.getEstado()};
         jugadores.addRow(datos);
         
         temp=temp.sig;
