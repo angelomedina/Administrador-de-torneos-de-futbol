@@ -5,20 +5,20 @@
  */
 package Metodos;
 
-import Entidades.Estadio;
+import Entidades.*;
 
 /**
  *
  * @author Admi
  */
-public class MetodosEstadio {
+public class MetodosGol {
+    public Gol inicio;
     
-    public Estadio estadio;
-   
-
-    public MetodosEstadio(Estadio estadio) {
-        this.estadio = estadio;
+    public void insertarInicio(Gol nuevo){
+        if(inicio == null){
+            inicio = nuevo;
+        }
+        
+        nuevo.siguiente = inicio;
     }
-    
-    
 }

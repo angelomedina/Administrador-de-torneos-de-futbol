@@ -105,4 +105,30 @@ public class MetodosEquipos {
         return null;    
     }
     
+    public Jugadores getDelantero(Equipos equipo, int aleatorio){
+        
+        Enlace_Jugador_Equipo aux = equipo.sigSub1;
+        while(aux.sig == null){
+            if(aux.sigJugador.getPosicion().equals("Delantero") && aleatorio == 1){
+                return aux.sigJugador;
+            }
+            aleatorio -= 1;
+            aux = aux.sig;
+        }
+        
+        return null;
+    }
+    
+    public Jugadores getPortero(Equipos equipo){
+        
+        Enlace_Jugador_Equipo aux = equipo.sigSub1;
+        while(aux.sig == null){
+            if(aux.sigJugador.getPosicion().equals("Portero")){
+                return aux.sigJugador;
+            }
+            aux = aux.sig;
+        }
+        
+        return null;
+    }
 }

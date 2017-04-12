@@ -117,6 +117,13 @@ public class Equipos {
 
     public String getNombreEntrenador() {
         return nombreEntrenador;
+<<<<<<< HEAD
+    }
+
+    public void setNombreEntrenador(String nombreEntrenador) {
+        this.nombreEntrenador = nombreEntrenador;
+=======
+>>>>>>> d736b1e21cfa5b922def509fb71096585292d6ae
     }
 
     public void setNombreEntrenador(String nombreEntrenador) {
@@ -125,5 +132,31 @@ public class Equipos {
     
     
     
+    public Jugadores getDelantero(Equipos equipo, int aleatorio){
+        
+        Enlace_Jugador_Equipo aux = equipo.sigSub1;
+        while(aux.sig == null){
+            if(aux.sigJugador.getPosicion().equals("Delantero") && aleatorio == 1){
+                return aux.sigJugador;
+            }
+            aleatorio -= 1;
+            aux = aux.sig;
+        }
+        
+        return null;
+    }
+    
+    public Jugadores getPortero(Equipos equipo){
+        
+        Enlace_Jugador_Equipo aux = equipo.sigSub1;
+        while(aux.sig == null){
+            if(aux.sigJugador.getPosicion().equals("Portero")){
+                return aux.sigJugador;
+            }
+            aux = aux.sig;
+        }
+        
+        return null;
+    }
     
 }
