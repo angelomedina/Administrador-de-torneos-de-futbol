@@ -117,18 +117,13 @@ public class Equipos {
 
     public String getNombreEntrenador() {
         return nombreEntrenador;
-<<<<<<< HEAD
-    }
-
-    public void setNombreEntrenador(String nombreEntrenador) {
-        this.nombreEntrenador = nombreEntrenador;
-=======
->>>>>>> d736b1e21cfa5b922def509fb71096585292d6ae
     }
 
     public void setNombreEntrenador(String nombreEntrenador) {
         this.nombreEntrenador = nombreEntrenador;
     }
+
+
     
     
     

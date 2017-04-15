@@ -8,6 +8,7 @@ package Mian;
 import Entidades.*;
 import Graficos.*;
 import Metodos.*;
+import javax.swing.UIManager;
 
 
 /**
@@ -21,7 +22,15 @@ public class Main {
      */
     public static void main(String[] args) {
           
-        
+    try 
+    {
+		UIManager.setLookAndFeel("com.sun.java.swing.plaf.nimbus.NimbusLookAndFeel");//nimbus
+
+    } 
+    catch (Exception e)
+    {
+		e.printStackTrace();
+    }  
 
     //QUEMA DE DATOS
     //Datos para entrenador
