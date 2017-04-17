@@ -100,6 +100,46 @@ public class MetodosJugadores {
 
     }
     
+    public String eliminarJugador(String nombre)
+    {
+        if (inicio==null)
+        {
+            return "Lista Vacia";
+        }  
+        if (inicio.getNombre().equals(nombre)) // este elimina el primero ,en casdo de que fuese el inicio
+        {
+            if(inicio.getEstado().equals("Disponibe"))
+            {
+                inicio=inicio.sig;
+                return "Eliminado";
+            }
+            else
+            {
+                return"El jugador no se puede eliminar porque se encuentra en un equipo";
+            }
+        }
+        Jugadores aux=inicio;
+        Jugadores ant=inicio;
+        while(aux != null )             // n caso de que el nodo estuviera al la miad
+        {
+            if(aux.getNombre().equals(nombre)) // aqui compara 
+            {
+                if(aux.getEstado().equals("Disponibe"))
+                {
+                    ant.sig=aux.sig; // sirve para el medio o para el final y en caso de que fuese final lo envia a null
+                    return "Eliminado";
+                }
+                else
+                {
+                    return"El jugador no se puede eliminar porque se encuentra en un equipo";
+                }
+            }
+            ant=aux;
+            aux=aux.sig;
+        }
+        return "No Existe";
+            
+    }
     
     
     public boolean verificaCedula(long cedula)
